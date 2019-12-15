@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from bs4 import BeautifulSoup
+import yaml
 import urllib
 import requests
 import os
@@ -48,25 +49,30 @@ def downloadPic(i, samples, set):
         urllib.urlretrieve(URL, cardName)
 
 # This loops through each set in cardSets.txt
-with open('config/cardSets.txt') as sets:
+
+
+#with open('config/cardSets.txt') as sets:
+with open('config/expansions.yaml', 'r') as sets:
     samples = []
     lastFirstPic = ""
-    for line in sets:
+    out = yaml.load(sets, Loader=yaml.FullLoader)
+
+    for line in out['expansions']:
         n=0
         while(n<5):
 
             # This loops through the different pages page=0, page=1 etc.
-            URL = "http://gatherer.wizards.com/Pages/Search/Default.aspx?page="+str(n)+"&set=%5B\""+line[:-1]+"\"%5D"
+            URL = "http://gatherer.wizards.com/Pages/Search/Default.aspx?page="+str(n)+"&set=%5B\""+urllib.quote(line)[:-1]+"\"%5D"
 
             # Check if the first pic is the same as the last first pic, if it is not download the images, or else exit the loop
             firstPic=getFirstPic(URL)
             if(firstPic!=lastFirstPic):
                 print("\n-----------------------------------------------")
-                print("Downloading images from "+line[:-1].replace('%20',' '))
+                print("Downloading images from " + line)
                 print("-----------------------------------------------")
                 samples = getPics(URL)
                 for p in range(0,len(samples)):
-                    downloadPic(p,samples,line)
+                    downloadPic(p, samples, urllib.quote(line))
             else:
                 n=6
             lastFirstPic=firstPic
