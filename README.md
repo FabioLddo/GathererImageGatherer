@@ -66,10 +66,11 @@ Populates a postgresql database with card name, set, and a perceptual hash of th
 
 - [x] Reorganize folders
 - [x] Add Docker-Compose to develop without installing Postgres locally
-- [ ] Add a license (i.e. MIT)
+- [x] Add a license (i.e. MIT)
+- [x] Refactor the output paths to download
+- [x] Add a way to resume downloads and avoid repetitions
 - [ ] Test all python scripts to check function after route refactor
 - [ ] Finish Makefile
-- [ ] Refactor the output paths to download
 - [ ] Add a way to automatically launch sql script once
 - [ ] Update README with makefile and new sections
 - [ ] Add a notebook example
