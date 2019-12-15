@@ -19,4 +19,3 @@ CREATE TABLE hashes (
     vertdhash bytea,
     whash bytea
 );
-

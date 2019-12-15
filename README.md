@@ -1,14 +1,10 @@
 # GathererImageGatherer
 
-This project downloads all the card images from http://gatherer.wizards.com/Pages/Default.aspx and saves them in the folder cardImages/ with their name and set.
+This project downloads all the card images from [gatherer.wizards.com](http://gatherer.wizards.com/Pages/Default.aspx) and saves them in the folder cardImages/ with their name and set.
 
-The images can be used to build a database of perceptual hashes.
+The images can be used to build a database of perceptual hashes. Since each card artwork has a unique perceptual hash, they can be compared with perceptual hashes of a card in a picture to identify them. If a card is identified, the information can be input into http://shop.tcgplayer.com/magic for the user to quickly get the price.
 
-Since each card artwork has a unique perceptual hash, they can be compared with perceptual hashes of a card in a picture to identify them.
-
-If a card is identified, the information can be input into http://shop.tcgplayer.com/magic for the user to quickly get the price.
-
-# Dependencies
+## Dependencies
 
 To run these programs you will need the python libraries BeautifulSoup, requests, imagehash, PIL, and psycopg2.
 
@@ -30,7 +26,7 @@ In postgres:
     CREATE EXTENSION pg_similarity;
 </pre>
 
-# Use
+## Use
 
 **Download Images**
 
@@ -55,7 +51,7 @@ Once postgres is installed, create a database and table needed for the python sc
 **Build The Database**
 
 <pre>
-    python buildDatabase.py
+    $> python buildDatabase.py
 </pre>
 
 Populates a postgresql database with card name, set, and a perceptual hash of the artwork from the images downloaded with scrapeImages.py
@@ -63,10 +59,10 @@ Populates a postgresql database with card name, set, and a perceptual hash of th
 **Test A Card**
 
 <pre>
-    python queryDatabase.py
+    $> python queryDatabase.py
 </pre>
 
-# TODOs
+## TODOs
 
 - [x] Reorganize folders
 - [x] Add Docker-Compose to develop without installing Postgres locally
