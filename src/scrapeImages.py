@@ -29,7 +29,7 @@ def getPics(url):
 # Gets the card name and multiverseID's from a sample and then saves them
 def downloadPic(i, samples, set):
 
-    expansion = 'data/images/'+set[:-1].replace('%20', '_')
+    expansion = 'data/images/'+set.replace('%20', '_')
 
     if not os.path.exists(expansion):
         os.makedirs(expansion)
@@ -59,10 +59,12 @@ with open('config/expansions.yaml', 'r') as sets:
 
     for line in out['expansions']:
         n=0
+
+        # Harcoded based on biggest set its 'Fifth Edition' with 449 cards
         while(n<5):
 
             # This loops through the different pages page=0, page=1 etc.
-            URL = "http://gatherer.wizards.com/Pages/Search/Default.aspx?page="+str(n)+"&set=%5B\""+urllib.quote(line)[:-1]+"\"%5D"
+            URL = "http://gatherer.wizards.com/Pages/Search/Default.aspx?page="+str(n)+"&set=%5B\""+urllib.quote(line)+"\"%5D"
 
             # Check if the first pic is the same as the last first pic, if it is not download the images, or else exit the loop
             firstPic=getFirstPic(URL)
