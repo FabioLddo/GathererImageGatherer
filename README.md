@@ -69,6 +69,9 @@ Populates a postgresql database with card name, set, and a perceptual hash of th
 - [x] Add a license (i.e. MIT)
 - [x] Refactor the output paths to download
 - [x] Add a way to resume downloads and avoid repetitions
+- [x] Add a way to download from another sources (like ebay or google)
+- [ ] Refactor the way to download files creating a subfolder by card
+- [ ] Merge several ways to build the dataset
 - [ ] Test all python scripts to check function after route refactor
 - [ ] Finish Makefile
 - [ ] Add a way to automatically launch sql script once
