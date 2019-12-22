@@ -9,6 +9,8 @@
 .idea/GathererImageGatherer.iml
 .idea/workspace.xml
 
+.DS_Store
+
 # CMake
 cmake-build-*/
 
