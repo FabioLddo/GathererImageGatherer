@@ -1,0 +1,848 @@
+The following is a chronological list of all ''[[Magic: The Gathering]]'' expansions and sets released thus far.  Old two-letter set codes used prior to the release of ''Torment'' are listed in parenthesis after the current code.
+{| class="wikitable sortable mw-collapsible" border="1" cellpadding="5"
+|-
+! Released
+! Set
+! class="unsortable" | Symbol
+! Code
+! Type
+! Notes
+|-
+| 1993-08 || ''[[Alpha|Alpha (Limited Edition)]]'' || style="text-align:center;"| {{keyrune|LEA}} || LEA (1E) || Core set || [[Core set]] #1 (1<sup>st</sup> printing)
+|-
+| 1993-10 || ''[[Beta|Beta (Limited Edition)]]'' || style="text-align:center;"| {{keyrune|LEB}} || LEB (2E) || Core set || Core set #1 (2<sup>nd</sup> printing)
+|-
+| 1993-12 || ''[[Unlimited Edition]]'' || style="text-align:center;"| {{keyrune|2ED}} || 2ED (2U) || Core set || Core set #2
+|-
+| 1993-12 || ''[[Arabian Nights]]'' || style="text-align:center;"| {{keyrune|ARN}} || ARN (AN) || Expansion set || 1<sup>st</sup> expansion
+|-
+| 1994-03 || ''[[Antiquities]]'' || style="text-align:center;"| {{keyrune|ATQ}} ||ATQ (AQ) || Expansion set || 2<sup>nd</sup> expansion
+|-
+| 1994-04 || ''[[Revised Edition]]'' || style="text-align:center;"| {{keyrune|3ED}} || 3ED (3E) || Core set || Core set #3
+|-
+| 1994-06 || ''[[Legends]]'' || style="text-align:center;"| {{keyrune|LEG}} || LEG (LE) || Expansion set || 3<sup>rd</sup> expansion
+|-
+| 1994-08 || ''[[The Dark]]'' || style="text-align:center;"| {{keyrune|DRK}} || DRK (DK) || Expansion set || 4<sup>th</sup> expansion
+|-
+| 1994-11 || ''[[Fallen Empires]]'' || style="text-align:center;"| {{keyrune|FEM}} || FEM (FE) || Expansion set || 5<sup>th</sup> expansion
+|-
+| 1995-05 || ''[[Fourth Edition]]'' || style="text-align:center;"| {{keyrune|4ED}} || 4ED (4E) || Core set || Core set #4
+|-
+| 1995-06 || ''[[Ice Age]]'' || style="text-align:center;"| {{keyrune|ICE}} || ICE (IA) || Expansion set || 6<sup>th</sup> expansion, 1<sup>st</sup> [[standalone]] set
+|-
+| 1995-07 || ''[[Chronicles]]'' || style="text-align:center;"| {{keyrune|CHR}} || CHR (CH) || Compilation set || Expansion symbol from original printing
+|-
+| 1995-08 || ''[[Renaissance]]'' || style="text-align:center;"| || || Compilation set ||
+|-
+| 1995-10 || ''[[Homelands]]'' || style="text-align:center;"| {{keyrune|HML}} || HML (HM) || Expansion set || 7<sup>th</sup> expansion
+|-
+| 1996-06 || ''[[Alliances]]'' || style="text-align:center;"| {{keyrune|ALL}} || ALL (AL) || Expansion set || 8<sup>th</sup> expansion
+|-
+| 1996-10 || ''[[Mirage]]'' || style="text-align:center;"| {{keyrune|MIR}} || MIR (MI) || Expansion set || 9<sup>th</sup> expansion, 2<sup>nd</sup> standalone set
+|-
+| 1997-02 || ''[[Visions]]'' || style="text-align:center;"| {{keyrune|VIS}} || VIS (VI) || Expansion set || 10<sup>th</sup> expansion
+|-
+| 1997-03 || ''[[Fifth Edition]]'' || style="text-align:center;"| {{keyrune|5ED}} || 5ED (5E) || Core set || Core set #5
+|-
+| 1997-05 || ''[[Portal]]'' || style="text-align:center;"| {{keyrune|POR}} || POR (PO) || Starter set || Starter set #1
+|-
+| 1997-06 || ''[[Weatherlight]]'' || style="text-align:center;"| {{keyrune|WTH}} || WTH (WL) || Expansion set || 11<sup>th</sup> expansion
+|-
+| 1997-10 || ''[[Tempest]]'' || style="text-align:center;"| {{keyrune|TMP}} || TMP (TE) || Expansion set || 12<sup>th</sup> expansion, 3<sup>rd</sup> standalone set
+|-
+| 1998-02 || ''[[Stronghold]]'' || style="text-align:center;"| {{keyrune|STH}} || STH (ST) || Expansion set || 13<sup>th</sup> expansion
+|-
+| 1998-06 || ''[[Exodus]]'' || style="text-align:center;"| {{keyrune|EXO}} || EXO (EX) || Expansion set || 14<sup>th</sup> expansion
+|-
+| 1998-06 || ''[[Portal Second Age]]'' || style="text-align:center;"| {{keyrune|P02}} || P02 (P2) || Starter set || Starter set #2
+|-
+| 1998-08 || ''[[Unglued]]'' || style="text-align:center;"| {{keyrune|UGL}} || UGL (UG) || Un-set || [[Un-set]] #1
+|-
+| 1998-10 || ''[[Urza's Saga]]'' || style="text-align:center;"| {{keyrune|USG}} || USG (UZ) || Expansion set || 15<sup>th</sup> expansion
+|-
+| 1998-11 || ''[[Anthologies]]'' || style="text-align:center;"| {{keyrune|ATH}} || ATH || Box set || First [[box set]] 
+|-
+| 1999-02 || ''[[Urza's Legacy]]'' || style="text-align:center;"| {{keyrune|ULG}} || ULG (UL) || Expansion set || 16<sup>th</sup> expansion
+|-
+| 1999-04 || ''[[Sixth Edition]]'' || style="text-align:center;"| {{keyrune|6ED}} || 6ED (6E) || Core set || Core set #6
+|-
+| 1999-05 || ''[[Portal Three Kingdoms]]'' || style="text-align:center;"| {{keyrune|PTK}} || PTK (PK) || Starter set || Starter set #3
+|-
+| 1999-06 || ''[[Urza's Destiny]]'' || style="text-align:center;"| {{keyrune|UDS}} || UDS (UD) || Expansion set || 17<sup>th</sup> expansion
+|-
+| 1999-08 || ''[[Starter 1999]]'' || style="text-align:center;"| {{keyrune|S99}} || S99 (P3) || Starter set || Starter set #4
+|-
+| 1999-09 || ''[[Mercadian Masques]]'' || style="text-align:center;"| {{keyrune|MMQ}} || MMQ (MM) || Expansion set || 18<sup>th</sup> expansion
+|-
+| 1999-11 || ''[[Battle Royale]]'' || style="text-align:center;"| {{keyrune|BRB}} || BRB || Box set ||
+|-
+| 2000-02 || ''[[Nemesis]]'' || style="text-align:center;"| {{keyrune|NEM}} || NEM (NE) || Expansion set || 19<sup>th</sup> expansion
+|-
+| 2000-04 || ''[[Starter 2000]]'' || style="text-align:center;"| {{keyrune|S00}} || S00 || Starter set || Starter set #5
+|-
+| 2000-06 || ''[[Prophecy]]'' || style="text-align:center;"| {{keyrune|PCY}} || PCY (PR) || Expansion set || 20<sup>th</sup> expansion
+|-
+| 2000-09 || ''[[Invasion]]'' || style="text-align:center;"| {{keyrune|INV}} || INV (IN) || Expansion set || 21<sup>st</sup> expansion
+|-
+| 2000-10 || ''[[Beatdown]]'' || style="text-align:center;"| {{keyrune|BTD}} || BTD || Box set ||
+|-
+| 2001-01 || ''[[Planeshift]]'' || style="text-align:center;"| {{keyrune|PLS}} || PLS (PS) || Expansion set || 22<sup>nd</sup> expansion
+|-
+| 2001-04 || ''[[Seventh Edition]]'' || style="text-align:center;"| {{keyrune|7ED}} || 7ED (7E) || Core set || Core set #7
+|-
+| 2001-05 || ''[[Apocalypse]]'' || style="text-align:center;"| {{keyrune|APC}} || APC (AP) || Expansion set || 23<sup>rd</sup> expansion
+|-
+| 2001-10 || ''[[Odyssey]]'' || style="text-align:center;"| {{keyrune|ODY}} || ODY (OD) || Expansion set || 24<sup>th</sup> expansion
+|-
+| 2001-12 || ''[[Deckmasters 2001]]'' || style="text-align:center;"| {{keyrune|DKM}} || DKM || Box set ||
+|-
+| 2002-02 || ''[[Torment]]'' || style="text-align:center;"| {{keyrune|TOR}} || TOR || Expansion set || 25<sup>th</sup> expansion
+|-
+| 2002-05 || ''[[Judgment]]'' || style="text-align:center;"| {{keyrune|JUD}} || JUD || Expansion set || 26<sup>th</sup> expansion
+|-
+| 2002-10 || ''[[Onslaught]]'' || style="text-align:center;"| {{keyrune|ONS}} || ONS || Expansion set || 27<sup>th</sup> expansion
+|-
+| 2003-01 || ''[[Legions]]'' || style="text-align:center;"| {{keyrune|LGN}} || LGN || Expansion set || 28<sup>th</sup> expansion
+|-
+| 2003-05 || ''[[Scourge]]'' || style="text-align:center;"| {{keyrune|SCG}} ||SCG || Expansion set || 29<sup>th</sup> expansion
+|-
+| 2003-07 || ''[[Eighth Edition]]'' || style="text-align:center;"| {{keyrune|8ED}} || 8ED || Core set || Core set #8
+|-
+| 2003-10 || ''[[Mirrodin]]'' || style="text-align:center;"| {{keyrune|MRD}} || MRD || Expansion set || 30<sup>th</sup> expansion
+|-
+| 2004-02 || ''[[Darksteel]]'' || style="text-align:center;"| {{keyrune|DST}} || DST || Expansion set || 31<sup>st</sup> expansion
+|-
+| 2004-06 || ''[[Fifth Dawn]]'' || style="text-align:center;"| {{keyrune|5DN}} || 5DN || Expansion set || 32<sup>nd</sup> expansion
+|-
+| 2004-10 || ''[[Champions of Kamigawa]]'' || style="text-align:center;"| {{keyrune|CHK}} || CHK || Expansion set || 33<sup>rd</sup> expansion
+|-
+| 2004-11 || ''[[Unhinged]]'' || style="text-align:center;"| {{keyrune|UNH}} || UNH || Un-set || Un-set #2
+|-
+| 2005-02 || ''[[Betrayers of Kamigawa]]'' || style="text-align:center;"| {{keyrune|BOK}} || BOK || Expansion set || 34<sup>th</sup> expansion
+|-
+| 2005-06 || ''[[Saviors of Kamigawa]]'' || style="text-align:center;"| {{keyrune|SOK}} || SOK || Expansion set || 35<sup>th</sup> expansion
+|-
+| 2005-07 || ''[[Ninth Edition]]'' || style="text-align:center;"| {{keyrune|9ED}} || 9ED || Core set || Core set #9
+|-
+| 2005-08 || ''[[Salvat 2005]]'' || style="text-align:center;"| {{keyrune|psalvat05}} || || Compilation set || [[Magic Encyclopedia (Salvat)|Magic Encyclopedia]] set #1
+|-
+| 2005-10 || ''[[Ravnica: City of Guilds]]'' || style="text-align:center;"| {{keyrune|RAV}} || RAV || Expansion set || 36<sup>th</sup> expansion
+|-
+| 2006-02 || ''[[Guildpact]]'' || style="text-align:center;"| {{keyrune|GPT}} || GPT || Expansion set || 37<sup>th</sup> expansion
+|-
+| 2006-05 || ''[[Dissension]]'' || style="text-align:center;"| {{keyrune|DIS}} || DIS || Expansion set || 38<sup>th</sup> expansion
+|-
+| 2006-07 || ''[[Coldsnap]]'' || style="text-align:center;"| {{keyrune|CSP}} || CSP || Expansion set || 39<sup>th</sup> expansion
+|-
+| 2006-10 || ''[[Time Spiral]]'' || style="text-align:center;"| {{keyrune|TSP}} || TSP ||Expansion set || 40<sup>th</sup> expansion
+|-
+| 2006-10 || ''[[Time Spiral/Timeshifted|Time Spiral Timeshifted]]'' || style="text-align:center;"| {{keyrune|TSP|rarity=t|grad=1}} || TSP || Compilation set || [[Bonus sheet]] set
+|-
+| 2007-02 || ''[[Planar Chaos]]'' || style="text-align:center;"| {{keyrune|PLC}} || PLC ||Expansion set || 41<sup>st</sup> expansion
+|-
+| 2007-05 || ''[[Future Sight]]'' || style="text-align:center;"| {{keyrune|FUT}} || FUT || Expansion set || 42<sup>nd</sup> expansion
+|-
+| 2007-07 || ''[[Tenth Edition]]'' || style="text-align:center;"| {{keyrune|10E}} || 10E || Core set || Core set #10
+|-
+| 2007-09 || ''[[Masters Edition]]'' || style="text-align:center;"| {{keyrune|ME1}} || MED || Compilation set || ''[[Magic Online]]'' [[Masters series|Masters]] set #1
+|-
+| 2007-10 || ''[[Lorwyn]]'' || style="text-align:center;"| {{keyrune|LRW}} || LRW || Expansion set || 43<sup>rd</sup> expansion
+|-
+| 2007-11 || ''[[Duel Decks: Elves vs. Goblins]]'' || style="text-align:center;"| {{keyrune|EVG}} || EVG || Box set || [[Duel Decks]] set #1
+|-
+| 2008-02 || ''[[Morningtide]]'' || style="text-align:center;"| {{keyrune|MOR}} || MOR || Expansion set || 44<sup>th</sup> expansion
+|-
+| 2008-05 || ''[[Shadowmoor]]'' || style="text-align:center;"| {{keyrune|SHM}} || SHM || Expansion set || 45<sup>th</sup> expansion
+|-
+| 2008-06 || ''[[Eventide]]'' || style="text-align:center;"| {{keyrune|EVE}} || EVE || Expansion set || 46<sup>th</sup> expansion
+|-
+| 2008-08 || ''[[From the Vault: Dragons]]'' || style="text-align:center;"| {{keyrune|DRB}} || DRB || Box set || [[From the Vault]] set #1
+|-
+| 2008-09 || ''[[Masters Edition II]]'' || style="text-align:center;"| {{keyrune|ME2}} || ME2 || Compilation set || ''Magic Online'' Masters set #2
+|-
+| 2008-10 || ''[[Shards of Alara]]'' || style="text-align:center;"| {{keyrune|ALA}} || ALA || Expansion set || 47<sup>th</sup> expansion
+|-
+| 2008-11 || ''[[Duel Decks: Jace vs. Chandra]]'' || style="text-align:center;"| {{keyrune|DD2}} || DD2 || Box set || Duel Decks set #2
+|-
+| 2009-02 || ''[[Conflux]]'' || style="text-align:center;"| {{keyrune|CON}} || CON || Expansion set || 48<sup>th</sup> expansion
+|-
+| 2009-04 || ''[[Duel Decks: Divine vs. Demonic]]'' || style="text-align:center;"| {{keyrune|DDC}} || DDC || Box set || Duel Decks set #3
+|-
+| 2009-04 || ''[[Alara Reborn]]'' || style="text-align:center;"| {{keyrune|ARB}} || ARB || Expansion set || 49<sup>th</sup> expansion
+|-
+| 2009-07 || ''[[Magic 2010]]'' || style="text-align:center;"| {{keyrune|M10}} || M10 || Core set || Core set #11
+|-
+| 2009-08 || ''[[Commander Theme Decks]]'' || style="text-align:center;"| {{keyrune|TD0}}|| TD0 || Box set || ''Magic Online'' only
+|-
+| 2009-08 || ''[[From the Vault: Exiled]]'' || style="text-align:center;"| {{keyrune|V09}} || V09 || Box set || From the Vault set #2
+|-
+| 2009-09 || ''[[Planechase]]'' || style="text-align:center;"| {{keyrune|HOP}} || HOP || Supplemental set || [[Planechase series|Planechase]] set #1
+|-
+| 2009-09 || ''[[Masters Edition III]]'' || style="text-align:center;"| {{keyrune|ME3}} || ME3 || Compilation set || ''Magic Online'' Masters set #3
+|-
+| 2009-10 || ''[[Zendikar]]'' || style="text-align:center;"| {{keyrune|ZEN}} || ZEN || Expansion set || 50<sup>th</sup> expansion
+|-
+| 2009-10 || ''[[Duel Decks: Garruk vs. Liliana]]'' || style="text-align:center;"| {{keyrune|DDD}} || DDD || Box set || Duel Decks set #4
+|-
+| 2009-11 || ''[[Premium Deck Series: Slivers]]'' || style="text-align:center;"| {{keyrune|H09}} || H09 || Box set || [[Premium Deck Series]] set #1
+|-
+| 2010-02 || ''[[Worldwake]]'' || style="text-align:center;"| {{keyrune|WWK}} || WWK || Expansion set || 51<sup>st</sup> expansion
+|-
+| 2010-03 || ''[[Duel Decks: Phyrexia vs. The Coalition]]'' || style="text-align:center;"| {{keyrune|DDE}} || DDE || Box set || Duel Decks set #5
+|-
+| 2010-04 || ''[[Rise of the Eldrazi]]'' || style="text-align:center;"| {{keyrune|ROE}} || ROE || Expansion set || 52<sup>nd</sup> expansion
+|-
+| 2010-05 || ''[[Deck Builder's Toolkit]]'' || || || Box set || [[Deck Builder's Toolkit]] #1
+|-
+| 2010-06 || ''[[Duels of the Planeswalkers (decks)|Duels of the Planeswalkers]]'' || style="text-align:center;"| {{keyrune|DPA}} || DPA || Box set || Inspired by the digital game
+|-
+| 2010-06 || ''[[Archenemy]]'' || style="text-align:center;"| {{keyrune|ARC}} || ARC || Supplemental set || Archenemy set #1
+|-
+| 2010-07 || ''[[Magic 2011]]'' || style="text-align:center;"| {{keyrune|M11}} || M11 || Core set || Core set #12
+|-
+| 2010-08 || ''[[From the Vault: Relics]]'' || style="text-align:center;"| {{keyrune|V10}} || V10 || Box set || From the Vault set #3
+|-
+| 2010-09 || ''[[Duel Decks: Elspeth vs. Tezzeret]]'' || style="text-align:center;"| {{keyrune|DDF}} || DDF || Box set || Duel Decks set #6
+|-
+| 2010-10 || ''[[Scars of Mirrodin]]'' || style="text-align:center;"| {{keyrune|SOM}} || SOM || Expansion set || 53<sup>rd</sup> expansion
+|-
+| 2010-11 || ''[[Magic Online Deck Series]]'' || style="text-align:center;"| {{keyrune|TD0}} || TD0 || Box set || ''Magic Online'' only
+|-
+| 2010-11 || ''[[Premium Deck Series: Fire & Lightning]]'' || style="text-align:center;"| {{keyrune|PD2}} || PD2 || Box set || Premium Deck Series set #2
+|-
+| 2010-11 || ''[[Momir Basic Event Deck]]'' || || || Box set || ''Magic Online'' only
+|-
+| 2011-01 || ''[[Salvat 2011]]'' || style="text-align:center;"| {{keyrune|psalvat11}} || || Compilation set || Magic Encyclopedia set #2
+|-
+| 2011-01 || ''[[Masters Edition IV]]'' || style="text-align:center;"| {{keyrune|ME4}} || ME4 || Compilation set || ''Magic Online'' Masters set #4
+|-
+| 2011-02 || ''[[Mirrodin Besieged]]'' || style="text-align:center;"| {{keyrune|MBS}} || MBS || Expansion set || 54<sup>th</sup> expansion
+|-
+| 2011-03 || ''[[Deck Builder's Toolkit 2011]]'' || style="text-align:center;"| || || Box set || Deck Builder's Toolkit #2.<br>Last self-contained [[toolkit]].
+|-
+| 2011-04 || ''[[Duel Decks: Knights vs. Dragons]]'' || style="text-align:center;"| {{keyrune|DDG}} || DDG || Box set || Duel Decks set #7
+|-
+| 2011-05 || ''[[New Phyrexia]]'' || style="text-align:center;"| {{keyrune|NPH}} || NPH || Expansion set || 55<sup>th</sup> expansion
+|-
+| 2011-06 || ''[[Commander (2011)|Commander]]'' || style="text-align:center;"| {{keyrune|CMD}} || CMD || Box set || [[Commander series|Commander]] set #1
+|-
+| 2011-07 || ''[[Magic 2012]]'' || style="text-align:center;"| {{keyrune|M12}} || M12 || Core set || Core set #13
+|-
+| 2011-08 || ''[[From the Vault: Legends]]'' || style="text-align:center;"| {{keyrune|V11}} || V11 || Box set || From the Vault set #4
+|-
+| 2011-09 || ''[[Duel Decks: Ajani vs. Nicol Bolas]]'' || style="text-align:center;"| {{keyrune|DDH}} || DDH || Box set || Duel Decks set #8
+|-
+| 2011-09 || ''[[Innistrad]]'' || style="text-align:center;"| {{keyrune|ISD}} || ISD || Expansion set || 56<sup>th</sup> expansion
+|-
+| 2011-11 || ''[[Premium Deck Series: Graveborn]]'' || style="text-align:center;"| {{keyrune|PD3}} || PD3 || Box set || Premium Deck Series set #3
+|-
+| 2012-02 || ''[[Dark Ascension]]'' || style="text-align:center;"| {{keyrune|DKA}} || DKA || Expansion set || 57<sup>th</sup> expansion
+|-
+| 2012-03 || ''[[Duel Decks: Venser vs. Koth]]'' || style="text-align:center;"| {{keyrune|DDI}} || DDI || Box set || Duel Decks set #9
+|-
+| 2012-05 || ''[[Avacyn Restored]]'' || style="text-align:center;"| {{keyrune|AVR}} || AVR || Expansion set || 58<sup>th</sup> expansion
+|-
+| 2012-05 || ''[[Planechase 2012]]'' || style="text-align:center;"| {{keyrune|PC2}} || PC2 || Supplemental set || Planechase set #2
+|-
+| 2012-07 || ''[[Magic 2013]]'' || style="text-align:center;"| {{keyrune|M13}} || M13 || Core set || Core set #14
+|-
+| 2012-08 || ''[[From the Vault: Realms]]'' || style="text-align:center;"| {{keyrune|V12}} || V12 || Box set || From the Vault set #5
+|-
+| 2012-09 || ''[[Duel Decks: Izzet vs. Golgari]]'' || style="text-align:center;"| {{keyrune|DDJ}} || DDJ || Box set || Duel Decks set #10
+|-
+| 2012-10 || ''[[Return to Ravnica]]'' || style="text-align:center;"| {{keyrune|RTR}} || RTR || Expansion set || 59<sup>th</sup> expansion
+|-
+| 2012-11 || ''[[Commander's Arsenal]]'' || style="text-align:center;"| {{keyrune|CM1}} || CM1 || Box set || Commander set #2
+|-
+| 2013-01 || ''[[Duel Decks: Mirrodin Pure vs. New Phyrexia]]'' || style="text-align:center;"| {{keyrune|TD2}} || TD2 || Box set || ''Magic Online'' Duel Deck
+|-
+| 2013-02 || ''[[Gatecrash]]'' || style="text-align:center;"| {{keyrune|GTC}} || GTC || Expansion set || 60<sup>th</sup> expansion
+|-
+| 2013-03 || ''[[Duel Decks: Sorin vs. Tibalt]]'' || style="text-align:center;"| {{keyrune|DDK}} || DDK || Box set || Duel Decks set #11
+|-
+| 2013-05 || ''[[Dragon's Maze]]'' || style="text-align:center;"| {{keyrune|DGM}} || DGM || Expansion set || 61<sup>st</sup> expansion
+|-
+| 2013-06 || ''[[Modern Masters]]'' || style="text-align:center;"| {{keyrune|MMA}} || MMA || Compilation set || [[Masters series|Masters]] set #1
+|-
+| 2013-07 || ''[[Magic 2014]]'' || style="text-align:center;"| {{keyrune|M14}} || M14 || Core set || Core set #15
+|-
+| 2013-08 || ''[[From the Vault: Twenty]]'' || style="text-align:center;"| {{keyrune|V13}} || V13 || Box set || From the Vault set #6
+|-
+| 2013-09 || ''[[Duel Decks: Heroes vs. Monsters]]'' || style="text-align:center;"| {{keyrune|DDL}} || DDL || Box set || Duel Decks set #12
+|-
+| 2013-09 || ''[[Theros]]'' || style="text-align:center;"| {{keyrune|THS}} || THS || Expansion set || 62<sup>nd</sup> expansion
+|-
+| 2013-11 || ''[[Commander 2013]] '' || style="text-align:center;"| {{keyrune|C13}} || C13 || Box set || Commander set #3
+|-
+| 2014-02 || ''[[Born of the Gods]]'' || style="text-align:center;"| {{keyrune|BNG}} || BNG || Expansion set || 63<sup>rd</sup> expansion
+|-
+| 2014-03 || ''[[Duel Decks: Jace vs. Vraska]]'' || style="text-align:center;"| {{keyrune|DDM}} || DDM || Box set || Duel Decks set #13
+|-
+| 2014-05 || ''[[Journey into Nyx]]'' || style="text-align:center;"| {{keyrune|JOU}} || JOU || Expansion set || 64<sup>th</sup> expansion
+|-
+| 2014-05 || ''[[Modern Event Deck]]'' || style="text-align:center;"| {{keyrune|MD1}} || MD1 || Box set ||
+|-
+| 2014-06 || ''[[Conspiracy]]'' || style="text-align:center;"| {{keyrune|CNS}} || CNS || Supplemental set || Conspiracy set #1
+|-
+| 2014-06 || ''[[Vintage Masters]]'' || style="text-align:center;"| {{keyrune|VMA}} || VMA || Compilation set || ''Magic Online'' Masters set #5
+|-
+| 2014-07 || ''[[Magic 2015]]'' || style="text-align:center;"| {{keyrune|M15}} || M15 || Core set || Core set #16
+|-
+| 2014-08 || ''[[From the Vault: Annihilation]]'' || style="text-align:center;"| {{keyrune|V14}} || V14|| Box set || From the Vault set #7
+|-
+| 2014-10 || ''[[Duel Decks: Speed vs. Cunning]]'' || style="text-align:center;"| {{keyrune|DDN}} || DDN || Box set || Duel Decks set #14
+|-
+| 2014-10 || ''[[Khans of Tarkir]] || style="text-align:center;"| {{keyrune|KTK}} || KTK || Expansion set || 65<sup>th</sup> expansion, MTG Arena set #6
+|-
+| 2014-11 || ''[[Commander 2014]]'' || style="text-align:center;"| {{keyrune|C14}} || C14 || Box set || Commander set #4
+|-
+| 2014-12 || ''[[Duel Decks Anthology]]'' || style="text-align:center;"| || DD3 || Box set || Duel Decks reprint set
+|-
+| 2015-01 || ''[[Fate Reforged]]'' || style="text-align:center;"| {{keyrune|FRF}} || FRF || Expansion set || 66<sup>th</sup> expansion
+|-
+| 2015-02 || ''[[Duel Decks: Elspeth vs. Kiora]]'' || style="text-align:center;"| {{keyrune|DDO}} || DDO || Box set || Duel Decks set #15
+|-
+| 2015-03 || ''[[Dragons of Tarkir]] || style="text-align:center;"| {{keyrune|DTK}} || DTK || Expansion set || 67<sup>th</sup> expansion
+|-
+| 2015-05 || ''[[Tempest Remastered]]'' || style="text-align:center;"| {{keyrune|TPR}} || TPR || Compilation set || ''Magic Online'' Masters  set #6
+|-
+| 2015-05 || ''[[Modern Masters 2015]]'' || style="text-align:center;"| {{keyrune|MM2}} || MM2 || Compilation set || Masters set #2
+|-
+| 2015-07 || ''[[Magic Origins]]'' || style="text-align:center;"| {{keyrune|ORI}} || ORI || Core set || Core set #17
+|-
+| 2015-08 || ''[[From the Vault: Angels]]'' || style="text-align:center;"| {{keyrune|V15}} || V15 || Box set || From the Vault set #8
+|-
+| 2015-08 || ''[[Duel Decks: Zendikar vs. Eldrazi]]'' || style="text-align:center;"| {{keyrune|DDP}} || DDP || Box set || Duel Decks set #16
+|-
+| 2015-10 || ''[[Battle for Zendikar]]'' || style="text-align:center;"| {{keyrune|BFZ}} || BFZ || Expansion set || 68<sup>th</sup> expansion
+|-
+| 2015-10<br/>2016-01 || ''[[Zendikar Expeditions]]'' || style="text-align:center;"| {{keyrune|EXP}} || EXP || Compilation set || [[Masterpiece Series]] set #1 ([[Battle for Zendikar block]])
+|-
+| 2015-11 || ''[[Commander 2015]]'' || style="text-align:center;"| {{keyrune|C15}} || C15 || Box set || Commander set #5
+|-
+| 2015-11 || ''[[Legendary Cube]]'' || style="text-align:center;"| {{keyrune|PZ1}} || PZ1 || Compilation set || ''Magic Online'' only
+|-
+| 2016-01 || ''[[Oath of the Gatewatch]]'' || style="text-align:center;"| {{keyrune|OGW}} || OGW || Expansion set || 69<sup>th</sup> expansion
+|-
+| 2016-02 || ''[[Duel Decks: Blessed vs. Cursed]]'' || style="text-align:center;"| {{keyrune|DDQ}}|| DDQ || Box set || Duel Decks set #17
+|-
+| 2016-04 || ''[[Welcome Deck 2016]]'' || style="text-align:center;"| {{keyrune|W16}} || W16 || Compilation set || Welcome Deck set #1
+|-
+| 2016-04 || ''[[Shadows over Innistrad]]'' || style="text-align:center;"| {{keyrune|SOI}} || SOI || Expansion set || 70<sup>th</sup> expansion
+|-
+| 2016-06 || ''[[Eternal Masters]]'' || style="text-align:center;"| {{keyrune|EMA}} || EMA || Compilation set || Masters set #3
+|-
+| 2016-07 || ''[[Eldritch Moon]]'' || style="text-align:center;"| {{keyrune|EMN}} || EMN || Expansion set || 71<sup>st</sup> expansion
+|-
+| 2016-08 || ''[[From the Vault: Lore]]'' || style="text-align:center;"| {{keyrune|V16}} || V16 || Box set || From the Vault set #9
+|-
+| 2016-08 || ''[[Conspiracy: Take the Crown]]'' || style="text-align:center;"| {{keyrune|CN2}} || CN2 || Supplemental set || Conspiracy set #2
+|-
+| 2016-09 || ''[[Duel Decks: Nissa vs. Ob Nixilis]]'' || style="text-align:center;"| {{keyrune|DDR}} || DDR || Box set || Duel Decks set #18
+|-
+| 2016-09 || ''[[Kaladesh]]'' || style="text-align:center;"| {{keyrune|KLD}} || KLD || Expansion set || 72<sup>nd</sup> expansion
+|-
+| 2016-09<br/>2017-01 || ''[[Kaladesh Inventions]]'' || style="text-align:center;"| {{keyrune|MPS}} || MPS || Compilation set || Masterpiece Series set #2 ([[Kaladesh block]])
+|-
+| 2016-10 || ''[[Treasure Chests]]'' || style="text-align:center;"| {{keyrune|PZ2}} || PZ2 || Compilation set || ''Magic Online'' only
+|-
+| 2016-11 || ''[[Commander 2016]]'' || style="text-align:center;"| {{keyrune|C16}} || C16 || Box set || Commander set #6
+|-
+| 2016-11 || ''[[You Make the Cube]]'' || || || Compilation set || ''Magic Online'' only
+|-
+| 2016-11 || ''[[Planechase Anthology]]'' || style="text-align:center;"| {{keyrune|PCA}} || PCA || Box set || Planechase set #3
+|-
+| 2017-01 || ''[[Aether Revolt]]'' || style="text-align:center;"| {{keyrune|AER}} || AER || Expansion set || 73<sup>rd</sup> expansion
+|-
+| 2017-03 || ''[[Modern Masters 2017]]'' || style="text-align:center;"| {{keyrune|MM3}} || MM3 || Compilation set || Masters set #4
+|-
+| 2017-03 || ''[[Duel Decks: Mind vs. Might]]'' || style="text-align:center;"| {{keyrune|DDS}} || DDS || Box set || Duel Decks set #19
+|-
+| 2017-04 || ''[[Welcome Deck 2017]]'' || style="text-align:center;"| {{keyrune|W17}} || W17 || Compilation set || Welcome Deck set #2
+|-
+| 2017-04 || ''[[Amonkhet]]'' || style="text-align:center;"| {{keyrune|AKH}} || AKH || Expansion set || 74<sup>th</sup> expansion
+|-
+| 2017-04<br/>2017-07 || ''[[Amonkhet Invocations]]'' || style="text-align:center;"| {{keyrune|MP2}} || MP2 || Compilation set || Masterpiece Series set #3 ([[Amonkhet block]])
+|-
+| 2017-06 || ''[[Commander Anthology]]'' || style="text-align:center;"| {{keyrune|CMA}} || CMA || Box set || Commander set #7
+|-
+| 2017-06 || ''[[Archenemy: Nicol Bolas]]'' || style="text-align:center;"| {{keyrune|E01}} || E01 || Supplemental set || Archenemy set #2,  [[Annex set]] #1
+|-
+| 2017-07 || ''[[Hour of Devastation]]'' || style="text-align:center;"| {{keyrune|HOU}} || HOU || Expansion set || 75<sup>th</sup> expansion
+|-
+| 2017-08 || ''[[Commander 2017]]'' || style="text-align:center;"| {{keyrune|C17}} || C17 || Box set || Commander set #8
+|-
+| 2017-09 || ''[[Ixalan]]'' || style="text-align:center;"| {{keyrune|XLN}} || XLN || Expansion set || 76<sup>th</sup> expansion
+|-
+| 2017-11 || ''[[Duel Decks: Merfolk vs. Goblins]]'' || style="text-align:center;"| {{keyrune|DDT}} || DDT || Box set || Duel Decks set #20
+|-
+| 2017-11 || ''[[Iconic Masters]]'' || style="text-align:center;"| {{keyrune|IMA}} || IMA || Compilation set || Masters set #5
+|-
+| 2017-11 || ''[[Explorers of Ixalan]]'' || style="text-align:center;"| {{keyrune|E02}} || E02 || Supplemental set || Annex set #2
+|-
+| 2017-11 || ''[[From the Vault: Transform]]'' || style="text-align:center;"| {{keyrune|V17}} || V17 || Box set || From the Vault set #10
+|-
+| 2017-12 || ''[[Unstable]]'' || style="text-align:center;"| {{keyrune|UST}} || UST || Un-set || Un-set #3
+|-
+| 2018-01 || ''[[Rivals of Ixalan]]'' || style="text-align:center;"| {{keyrune|RIX}} || RIX || Expansion set || 77<sup>th</sup> expansion
+|-
+| 2018-03 || ''[[Masters 25]]'' || style="text-align:center;"| {{keyrune|A25}} || A25 || Compilation set || Masters set #6
+|-
+| 2018-04 || ''[[Duel Decks: Elves vs. Inventors]]'' || style="text-align:center;"| {{keyrune|DDU}} || DDU || Box set || Duel Decks set #21
+|-
+| 2018-04 || ''[[Challenger Decks]]'' || || Q01 || Box set || Challenger Decks set #1
+|-
+| 2018-04 || ''[[Dominaria]]'' || style="text-align:center;"| {{keyrune|DOM}} || DOM || Expansion set || 78<sup>th</sup> expansion
+|-
+| 2018-06 || ''[[Commander Anthology Volume II]]'' || style="text-align:center;"| {{keyrune|CM2}} || CM2 || Box set || Commander set #9 
+|-
+| 2018-06 || ''[[Battlebond]]'' || style="text-align:center;"| {{keyrune|BBD}} || BBD || Supplemental set || 
+|-
+| 2018-06 || ''[[Signature Spellbook: Jace]]'' || style="text-align:center;"| {{keyrune|SS1}} || SS1 || Box set || [[Signature Spellbook]] set #1
+|-
+| 2018-06 || ''[[Global Series: Jiang Yanggu & Mu Yanling]]'' || style="text-align:center;"| {{keyrune|GS1}} || GS1 || Box set || Global Series set #1
+|-
+| 2018-07 || ''[[Core Set 2019]]'' || style="text-align:center;"| {{keyrune|M19}} || M19 || Core set || Core set #18
+|-
+| 2018-08 || ''[[Commander 2018]]'' || style="text-align:center;"| {{keyrune|C18}} || C18 || Box set || Commander set #10
+|-
+| 2018-10 || ''[[Guilds of Ravnica/Mythic Edition|Guilds of Ravnica Mythic Edition]]'' || style="text-align:center;"| {{keyrune|MED}} || MED || Special edition || 
+|-
+| 2018-10 || ''[[Guilds of Ravnica]]'' || style="text-align:center;"| {{keyrune|GRN}} || GRN || Expansion set || 79<sup>th</sup> expansion
+|-
+| 2018-10 || ''[[Spellslinger Starter Kit]]'' || || SK1 || Box set || Starter set #6
+|-
+| 2018-11 || ''[[Guilds of Ravnica/Guild Kits|Guilds of Ravnica Guild Kits]]'' || style="text-align:center;"| {{keyrune|Dimir,Selesnya,Izzet,Boros,Golgari}} || GK1 || Box set || Annex set #4, 1<sup>st</sup> set of [[Guild Kits]]
+|-
+| 2018-11 || ''[[Game Night]]'' || style="text-align:center;"| {{keyrune|GNT}} || GNT || Box set || Game Night set #1
+|-
+| 2018-12 || ''[[Ultimate Masters]]'' || style="text-align:center;"| {{keyrune|UMA}} || UMA || Compilation set || Masters set #7
+|-
+| 2018-10 || ''[[Ravnica Allegiance/Mythic Edition|Ravnica Allegiance Mythic Edition]]'' || style="text-align:center;"| {{keyrune|MED}} || MED || Special edition || 
+|-
+| 2019-01 || ''[[Ravnica Allegiance]]'' || style="text-align:center;"| {{keyrune|RNA}} || RNA || Expansion set || 80<sup>th</sup> expansion
+|-
+| 2019-02 || ''[[Ravnica Allegiance/Guild Kits|Ravnica Allegiance Guild Kits]]'' || style="text-align:center;"| {{keyrune|Azorius,Gruul,Rakdos,Simic,Orzhov}} || GK2 || Box set || Annex set #5, 2<sup>nd</sup> set of [[Guild Kits]]
+|-
+| 2019-04 || ''[[Challenger Decks 2019]]'' || style="text-align:center;" | || Q02 || Box set || Challenger Decks set #2
+|-
+| 2019-05 || ''[[War of the Spark/Mythic Edition|War of the Spark Mythic Edition]]'' || style="text-align:center;"| {{keyrune|MED}} || MED || Special edition || 
+|-
+| 2019-05 || ''[[War of the Spark]]'' || style="text-align:center;"| {{keyrune|WAR}} || WAR || Expansion set || 81<sup>st</sup> expansion
+|-
+| 2019-06 || ''[[Modern Horizons]]'' || style="text-align:center;"| {{keyrune|MH1}} || MH1 || Supplemental set || [[Straight-to-Modern]] set #1
+|-
+| 2019-06 || ''[[Signature Spellbook: Gideon]]'' || style="text-align:center;"| {{keyrune|SS2}} || SS2 || Box set || [[Signature Spellbook]] set #2
+|-
+| 2019-07 || ''[[Core Set 2020]]'' || style="text-align:center;"| {{keyrune|M20}} || M20 || Core set || Core set #19
+|-
+| 2019-08 || ''[[Commander 2019]]'' || style="text-align:center;"| {{keyrune|C19}} || C19 || Box set || Commander set #11
+|-
+| 2019-10 || ''[[Throne of Eldraine]]'' || style="text-align:center;"| {{keyrune|ELD}} || ELD || Expansion set|| 82<sup>nd</sup> expansion
+|-
+| 2019-10 || ''[[Ponies: The Galloping]]'' || style="text-align:center;"| {{keyrune|PTG}} || PTG || Box set|| Charity set
+|-
+| 2019-11 || ''[[Mystery Booster]]'' || style="text-align:center;"| || MB1 || Supplemental set || Chaos Draft set #1 (Convention Edition)
+|-
+| 2019-11 || ''[[Challenger Decks 2019 Japan]]'' || style="text-align:center;"| || || Box set || Challenger Decks set #2b
+|-
+| 2019-11 || ''[[Game Night 2019]]'' || style="text-align:center;"| {{keyrune|GN2}} || GN2 || Box set || Game Night set #2
+|-
+| 2019-12 || [[Secret Lair Drop Series (December 2019)|''Secret Lair Drop Series'' (December 2019)]] || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #1
+|-
+| 2020-01 || ''[[Theros Beyond Death]]'' || style="text-align:center;"| {{keyrune|THB}} || THB || Expansion set|| 83<sup>rd</sup> expansion
+|-
+| 2020-01 || ''[[Secret Lair Drop Series: Year of the Rat]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #2
+|-
+| 2020-02 || ''[[Secret Lair Drop Series: Theros Stargazing]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #3
+|-
+| 2020-02 || ''[[Unsanctioned]]'' || style="text-align:center;"| {{keyrune|UND}} || UND || Box set ||  Un-set #4
+|-
+| 2020-03 || ''[[Secret Lair Drop Series: International Women's Day]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #4
+|-
+| 2020-03 || ''[[Secret Lair Drop Series: Thalia - Beyond the Helvault]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #5
+|-
+| 2020-03 || ''[[Mystery Booster/Retail Edition|Mystery Booster Retail Edition]]'' || style="text-align:center;"| || MB1 || Supplemental set || Chaos Draft set #1 (Retail Edition)
+|-
+| 2020-03 || ''[[Challenger Decks 2020]]'' || style="text-align:center;" | || Q03 || Box set || Challenger Decks set #3
+|-
+| 2020-04 || ''[[Ikoria: Lair of Behemoths]]'' || style="text-align:center;"| {{keyrune|IKO}} || IKO || Expansion set|| 84<sup>th</sup> expansion
+|-
+| 2020-04 || ''[[Commander 2020]]'' || style="text-align:center;"| {{keyrune|C20}} || C20 || Box set|| Commander set #12
+|-
+| 2020-05 || ''[[Secret Lair Drop Series: The Godzilla Lands]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #7
+|-
+| 2020-06 || ''[[Secret Lair Drop Series: Summer Superdrop]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #8
+|-
+| 2020-06 || ''[[Secret Lair: Ultimate Edition]]'' || style="text-align:center;"| {{keyrune|SLU}} || SLU || Box set|| [[Secret Lair]] release #9
+|-
+| 2020-06 || ''[[Signature Spellbook: Chandra]]'' || style="text-align:center;"| {{keyrune|SS3}} || SS3 || Box set || [[Signature Spellbook]] set #3
+|-
+| 2020-07 || ''[[Core Set 2021]]'' || style="text-align:center;"| {{keyrune|M21}} || M21 || Core set || Core set #20
+|-
+| 2020-07 || ''[[Jumpstart]]'' || style="text-align:center;"| {{keyrune|JMP}} || JMP || Supplemental set || Jumpstart set #1
+|-
+| 2020-08 || ''[[Double Masters]]'' || style="text-align:center;"| {{keyrune|2XM}} || 2XM || Compilation set || Masters set #8
+|-
+| 2020-08 || ''[[Amonkhet Remastered]]'' || style="text-align:center;"| {{keyrune|AKR}} || AKR || Compilation set || MTG Arena set #1
+|-
+| 2020-08 || ''[[Arena Base Set]]'' || style="text-align:center;"| {{keyrune|parl3}} || ANB || Compilation set || MTG Arena set #2
+|-
+| 2020-08 || ''[[Secret Lair Drop Series: Prime Slime]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #10
+|-
+| 2020-08 || ''[[Secret Lair Drop Series: Every Dog Has Its Day]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #11
+|-
+| 2020-09 || ''[[Secret Lair Drop Series: Happy Yargle Day!]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #12
+|-
+| 2020-09 || ''[[Secret Lair Drop Series: April Fools]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #13
+|-
+| 2020-09 || ''[[Zendikar Rising]]'' || style="text-align:center;"| {{keyrune|ZNR}} || ZNR || Expansion set|| 85<sup>th</sup> expansion
+|-
+| 2020-09 || ''[[Zendikar Rising/Expeditions|Zendikar Rising Expeditions]]'' || style="text-align:center;"| {{keyrune|ZNE}} || ZNE || Compilation set || Masterpiece Series set #4
+|-
+| 2020-09 || ''[[Zendikar Rising/Commander decks|Zendikar Rising Commander Decks]]'' || style="text-align:center;"| {{keyrune|ZNC}} || ZNC || Box set|| Commander Decks set #1
+|-
+| 2020-09 || ''[[Secret Lair Drop Series: Showcase: Zendikar Revisited]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #14
+|-
+| 2020-10 || ''[[Secret Lair Drop Series: The Walking Dead]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #15, 1<sup>st</sup> [[Universes Beyond]] set #1
+|-
+| 2020-11 || ''[[Secret Lair Drop Series: Extra Life 2020]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #16
+|-
+| 2020-11 || ''[[Kaladesh Remastered]]'' || style="text-align:center;"| {{keyrune|KLR}} || KLR || Compilation set || MTG Arena set #3
+|-
+| 2020-11 || ''[[Commander Legends]]'' || style="text-align:center;"| {{keyrune|CMR}} || CMR || Supplemental set || Commander Legends set #1
+|-
+| 2020-11 || ''[[Commander Legends Commander Decks]]'' || style="text-align:center;"| {{keyrune|CMC}} || CMR || Box set|| Commander Decks set #2
+|-
+| 2020-11 || ''[[Secret Lair Drop Series: Secretversary]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #17
+|-
+| 2020-12 || ''[[Commander Collection: Green]]'' || style="text-align:center;"| {{keyrune|CC1}} || CC1 || Box set|| [[Commander Collection]] #1
+|-
+| 2021-02|| ''[[Kaldheim]]'' || style="text-align:center;"| {{keyrune|khm}} || KHM || Expansion set|| 86<sup>th</sup> expansion
+|-
+| 2021-02 || ''[[Kaldheim/Commander decks|Kaldheim Commander Decks]]'' || style="text-align:center;"| {{keyrune|khc}} || KHC || Box set|| Commander Decks set #3
+|-
+| 2021-02 || ''[[Secret Lair Drop Series: Smitten]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #18
+|-
+| 2021-02 || ''[[Secret Lair Drop Series: Black is Magic]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #19
+|-
+| 2021-03 || ''[[Time Spiral Remastered]]'' || style="text-align:center;"| {{keyrune|TSR}} || TSR || Compilation set|| Tabletop Remastered set #1
+|-
+| 2021-03 || ''[[Time Spiral Remastered/Timeshifted|Time Spiral Remastered Timeshifted]]'' || style="text-align:center;"| {{keyrune|TSR|rarity=t|grad=1}} || TSR || Compilation set || [[Bonus sheet]] set
+|-
+| 2021-03 || ''[[Challenger Decks 2021]]'' || style="text-align:center;" | || Q05 || Box set || Challenger Decks set #4
+|-
+| 2021-04 || ''[[Strixhaven: School of Mages]]'' || style="text-align:center;"| {{keyrune|stx}} || STX || Expansion set|| 87<sup>th</sup> expansion
+|-
+| 2021-04 || ''[[Mystical Archive]]'' || style="text-align:center;"| {{keyrune|sta}} || STA || Compilation set || [[Bonus sheet]] set
+|-
+| 2021-04 || ''[[Commander 2021]]'' || style="text-align:center;"| {{keyrune|C21}} || C21 || Box set || Commander set #13
+|- 
+| 2021-04 || ''[[Secret Lair Drop Series: Dr. Lair's Secretorium Superdrop]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #20
+|-
+| 2021-05 || ''[[Secret Lair: Ultimate Edition 2]]'' || style="text-align:center;"| {{keyrune|SLU}} || SLU || Box set|| [[Secret Lair]] release #21
+|-
+| 2021-06 || ''[[Modern Horizons II]]'' || style="text-align:center;"| {{keyrune|MH2}} || MH2 || Supplemental set || Straight-to-Modern set #2
+|-
+| 2021-06 || ''[[Secret Lair Drop Series: All-Natural, Totally Refreshing Superdrop]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #22
+|-
+| 2021-07|| ''[[Dungeons & Dragons: Adventures in the Forgotten Realms]]'' || style="text-align:center;"| {{keyrune|AFR}} || AFR || Expansion set || 88<sup>th</sup> expansion. Replaced ''Core set 2022''. 
+|-
+| 2021-07|| ''[[Dungeons & Dragons: Adventures in the Forgotten Realms Commander Decks]]'' || style="text-align:center;"| {{keyrune|AFC}} || AFC || Box set || Commander Decks set #4 
+|-
+| 2021-08|| ''[[2021 Arena Starter Kit]]'' || || || Box set || Starter set #7 
+|-
+| 2021-08|| ''[[Secret Lair Drop Series: Out of Time Superdrop]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set ||  [[Secret Lair]] release #23
+|-
+| 2021-08|| ''[[Jumpstart: Historic Horizons]]'' || style="text-align:center;"| {{keyrune|J21}} || J21 || Digital set || MTG Arena set #4, [[Designed-for-digital]] set#1, Jumpstart set #2
+|-
+| 2021-09|| ''[[Innistrad: Midnight Hunt]]'' || style="text-align:center;"| {{keyrune|MID}} || MID || Expansion set|| 89<sup>th</sup> expansion
+|-
+| 2021-09|| ''[[Innistrad: Midnight Hunt Commander Decks]]'' || style="text-align:center;"| {{keyrune|MIC}} || MIC || Box set|| Commander Decks set #5
+|-
+| 2021-10 || ''[[Pioneer Challenger Decks 2021]]'' || style="text-align:center;"| || || Box set || Challenger Decks set #5
+|-
+| 2021-10 || ''[[Secret Lair Drop Series: October Superdrop]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #24
+|-
+| 2021-10 || ''[[Secret Lair Drop Series: Purrfection]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #25
+|-
+| 2021-11 || ''[[Secret Lair Drop Series: Extra Life 2021]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #26
+|-
+| 2021-11|| ''[[Innistrad: Crimson Vow]]'' || style="text-align:center;"| {{keyrune|VOW}} || VOW || Expansion set || 90<sup>th</sup> expansion
+|-
+| 2021-11|| ''[[Innistrad: Crimson Vow Commander Decks]]'' || style="text-align:center;"| {{keyrune|VOC}} || VOC || Box set|| Commander Decks set #6
+|-
+| 2021-11 || ''[[Secret Lair Drop Series: MSCHF]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #27
+|-
+| 2021-11 || ''[[Secret Lair Drop Series: Secretversary 2021]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #28, Secret Lair Commander deck #1
+|-
+| 2021-12 || ''[[Alchemy: Innistrad]]'' || style="text-align:center;"| {{keyrune|Y22}} || Y22 || Digital set || [[Alchemy]] release #1
+|-
+| 2022-01 || ''[[Secret Lair Drop Series: The Astrology Lands]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #29
+|-
+| 2022-01|| ''[[Commander Collection: Black]]'' || style="text-align:center;"| {{keyrune|CC2}} || CC2 || Box set|| [[Commander Collection]] #2
+|-
+| 2022-01|| ''[[Innistrad: Double Feature]]'' || style="text-align:center;"| || DBL || Compilation set|| Tabletop Remastered set #2
+|-
+| 2022-02 || ''[[Secret Lair Drop Series: February Superdrop 2022]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #30
+|-
+| 2022-02|| ''[[Kamigawa: Neon Dynasty]]'' || style="text-align:center;"| {{keyrune|NEO}} || NEO || Expansion set || 91<sup>st</sup> expansion
+|-
+| 2022-02|| ''[[Kamigawa: Neon Dynasty Commander Decks]]'' || style="text-align:center;"| {{keyrune|NEC}} || NEC || Box set || Commander Decks set #7
+|-
+| 2022-03 || ''[[Alchemy: Kamigawa]]'' || style="text-align:center;"| {{keyrune|Y22}} || Y22 || Digital set || [[Alchemy]] release #2
+|-
+| 2022-04|| ''[[Challenger Decks 2022]]'' || style="text-align:center;"| || || Box set || Challenger Decks set #6
+|-
+| 2022-04|| ''[[Secret Lair Drop Series: April Superdrop 2022]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #31
+|-
+| 2022-05|| ''[[Streets of New Capenna]]'' || style="text-align:center;"| {{keyrune|SNC}} || SNC || Expansion set || 92<sup>nd</sup> expansion
+|-
+| 2022-05|| ''[[Streets of New Capenna Commander Decks]]'' || style="text-align:center;"| {{keyrune|NCC}} || NCC || Box set || Commander Decks set #8
+|-
+| 2022-05|| ''[[Secret Lair Drop Series: Pride Across the Multiverse]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #32
+|-
+| 2022-06 || ''[[Alchemy: New Capenna]]'' || style="text-align:center;"| {{keyrune|Y22}} || Y22 || Digital set || [[Alchemy]] release #3
+|-
+| 2022-06 || ''[[2022 Starter Kit]] || style="text-align:center;"| || || Box set || Starter set #8 
+|-
+| 2022-06 || ''[[Commander Legends: Battle for Baldur's Gate]]'' || style="text-align:center;"| {{keyrune|CLB}} || CLB || Supplemental set || Commander Legends set #2
+|-
+| 2022-07 || ''[[Commander Legends: Battle for Baldur's Gate Commander Decks]]'' || style="text-align:center;"| {{keyrune|CLB}} || CLB || Box set|| Commander Decks set #9
+|-
+| 2022-06|| ''[[Secret Lair Drop Series: Here Be Dragons]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #33
+|-
+| 2022-06|| ''[[Secret Lair Drop Series: June Superdrop 2022]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #34
+|-
+| 2022-07 || ''[[Alchemy Horizons: Baldur's Gate]]'' || style="text-align:center;"| {{keyrune|HBG}} || HBG || Digital set || [[Alchemy]] release #4
+|-
+| 2022-07|| ''[[Double Masters 2022]]'' || style="text-align:center;"| {{keyrune|2X2}} || 2X2 || Compilation set || Masters set #9
+|-
+| 2022-07|| ''[[Secret Lair Drop Series: Fortnite]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #35
+|-
+| 2022-08|| ''[[Secret Lair Drop Series: Li'l Giri Saves the Day]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #36
+|-
+| 2022-08|| ''[[Secret Lair Drop Series: August Superdrop 2022]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #37
+|-
+| 2022-09|| ''[[Dominaria United]]'' || style="text-align:center;"| {{keyrune|DMU}} || DMU || Expansion set || 93<sup>rd</sup> expansion
+|-
+| 2022-09|| ''[[Dominaria United Commander Decks]]'' || style="text-align:center;"| {{keyrune|DMC}} || DMC || Box set || Commander Decks set #10
+|-
+| 2022-10|| ''[[Secret Lair Drop Series: Li’l’ler Walkers]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #38
+|-
+| 2022-10 || ''[[Alchemy: Dominaria]]'' || style="text-align:center;"| {{keyrune|YDMU}} || Y23 || Digital set || [[Alchemy]] release #5
+|-
+| 2022-10|| ''[[Unfinity]]'' || style="text-align:center;"| {{keyrune|UNF}} || UNF || Un-set || Un-set #5
+|-
+| 2022-10|| ''[[Warhammer 40,000 Commander Decks]]'' || style="text-align:center;"| {{keyrune|40K}} || 40K || Box set || [[Universes Beyond]] set #2, Commander Decks set #11
+|-
+| 2022-10 || ''[[Game Night Free-for-All]]'' || style="text-align:center;"| {{keyrune|GN3}} || GN3 || Box set || Game Night set #3
+|-
+| 2022-10|| ''[[Secret Lair Drop Series: October Superdrop 2022]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #39
+|-
+| 2022-11|| ''[[Secret Lair 30th Anniversary Countdown Kit]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLC || Box set || [[Secret Lair]] kit #1
+|-
+| 2022-11 || ''[[Pioneer Challenger Decks 2022]]'' || style="text-align:center;"| || Q08 || Box set || Challenger Decks set #7
+|-
+| 2022-11|| ''[[Secret Lair Drop Series: Extra Life 2022]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #40
+|-
+| 2022-11|| ''[[The Brothers' War]]'' || style="text-align:center;"| {{keyrune|BRO}} || BRO || Expansion set || 94<sup>th</sup> expansion
+|-
+| 2022-11|| ''[[The Brothers' War/Retro Frame Artifacts|Retro Frame Artifacts]]'' || style="text-align:center;"| {{keyrune|BRR}} || BRR || Compilation set || [[Bonus sheet]] set
+|-
+| 2022-11|| ''[[The Brothers' War Commander Decks]]'' || style="text-align:center;"| {{keyrune|BRC}} || BRC || Box set || Commander Decks set #12
+|-
+| 2022-11|| ''[[Transformers]]'' || style="text-align:center;"| {{keyrune|BOT}} || BOT || Supplemental set || [[Universes Beyond]] set #3, Booster insert set #1
+|-
+| 2022-12|| ''[[Jumpstart 2022]]'' || style="text-align:center;"| {{keyrune|J22}} || J22 || Supplemental set || Jumpstart set #3
+|-
+| 2022-12|| ''[[Starter Commander Decks]]'' || style="text-align:center;"| {{keyrune|SCD}} || SCD || Box set || Commander Decks set #13
+|-
+| 2022-12|| ''[[Secret Lair Drop Series: December Superdrop 2022]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #41
+|-
+| 2022-12|| ''[[Alchemy: The Brothers' War]]'' || style="text-align:center;"| {{keyrune|YDMU}} || Y23 || Digital set || [[Alchemy]] release #6
+|-
+| 2023-01|| ''[[Dominaria Remastered]]'' || style="text-align:center;"| {{keyrune|DMR}} || DMR || Compilation set || Tabletop Remastered set #3
+|-
+| 2023-01|| ''[[Secret Lair Drop Series: Winter Superdrop 2023]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #42
+|-
+| 2023-02|| ''[[Phyrexia: All Will Be One]]'' || style="text-align:center;"| {{keyrune|ONE}} || ONE || Expansion set || 95<sup>th</sup> expansion
+|-
+| 2023-02|| ''[[Phyrexia: All Will Be One Commander Decks]]'' || style="text-align:center;"| {{keyrune|ONC}} || ONC || Box set || Commander Decks set #14
+|-
+| 2023-02|| ''[[Alchemy: Phyrexia]]'' || style="text-align:center;"| {{keyrune|YDMU}} || Y23 || Digital set || [[Alchemy]] release #7
+|-
+| 2023-03|| ''[[Secret Lair Drop Series: Legendary Flyers (Not That Kind)]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #43
+|-
+| 2023-03|| ''[[Secret Lair: More Borderless Planeswalkers]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #44
+|-
+| 2023-03|| ''[[Shadows over Innistrad Remastered]]'' || style="text-align:center;"| {{keyrune|SIR}} || SIR || Compilation set || MTG Arena set #5
+|-
+| 2023-03|| ''[[Shadows over Innistrad Remastered/Shadows of the Past|Shadows of the Past]]'' || style="text-align:center;"| {{keyrune|SIS}} || SIS || Compilation set || Digital [[bonus sheet]] set
+|-
+| 2023-03|| ''[[Secret Lair Drop Series: Dungeons & Dragons: Honor Among Thieves]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #44
+|-
+| 2023-04|| ''[[March of the Machine]]'' || style="text-align:center;"| {{keyrune|MOM}} || MOM || Expansion set || 96<sup>th</sup> expansion
+|-
+| 2023-04|| ''[[March of the Machine/Multiverse Legends|Multiverse Legends]]'' || style="text-align:center;"| {{keyrune|MUL}} || MUL || Compilation set || [[Bonus sheet]] set
+|-
+| 2023-04|| ''[[March of the Machine/Commander decks]]'' || style="text-align:center;"| {{keyrune|MOC}} || MOC || Box set || Commander Decks set #15, Planechase set #3
+|-
+| 2023-04|| ''[[Secret Lair Drop Series: Spring Superdrop 2023]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #45
+|-
+| 2023-05|| ''[[Secret Lair: From Cute to Brute]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] Commander deck #2
+|-
+| 2023-05|| ''[[March of the Machine: The Aftermath]]'' || style="text-align:center;"| {{keyrune|MAT}} || MAT || Supplemental set || 1<sup>st</sup> [[micro set]]
+|-
+| 2023-06|| ''[[The Lord of the Rings: Tales of Middle-Earth]]'' || style="text-align:center;"| {{keyrune|LTR}} || LTR || Supplemental set || [[Universes Beyond]] set #4, Straight-to-Modern set #3
+|-
+| 2023-06|| ''[[The Lord of the Rings: Tales of Middle-Earth Commander Decks]]'' || style="text-align:center;"| {{keyrune|LTC}} || LTC || Box set || Commander Decks set #16
+|-
+| 2023-06|| ''[[The Lord of the Rings: Tales of Middle-earth/Starter Kit|The Lord of the Rings: Tales of Middle-earth Starter Kit]]'' || style="text-align:center;" | || || Box set || Starter set #9
+|-
+| 2023-06|| ''[[Secret Lair Drop Series: Summer Superdrop 2023]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #46
+|-
+| 2023-08|| ''[[Commander Masters]]'' || style="text-align:center;"| {{keyrune|CMM}} || CMM || Compilation set || Masters set #10
+|-
+| 2023-08|| ''[[Commander Masters/Commander decks]]'' || style="text-align:center;"| {{keyrune|CMM}} || CMM || Box set || Commander Decks set #17
+|-
+| 2023-08|| ''[[Secret Lair Commander Deck: Angels: They're Just Like Us but Cooler and with Wings]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || Secret Lair Commander deck #3
+|-
+| 2023-06|| ''[[Secret Lair Drop Series: Fall Superdrop 2023]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #47
+|-
+| 2023-09|| ''[[Wilds of Eldraine]]'' || style="text-align:center;"| {{keyrune|WOE}} || WOE || Expansion set || 97<sup>th</sup> expansion
+|-
+| 2023-09|| ''[[Wilds of Eldraine/Enchanting Tales|Enchanting Tales]]'' || style="text-align:center;"| {{keyrune|WOT}} || WOT || Compilation set || [[Bonus sheet]] set
+|-
+| 2023-09|| ''[[Wilds of Eldraine/Commander decks]]'' || style="text-align:center;"| {{keyrune|WOC}} || WOC || Box set || Commander Decks set #18
+|-
+| 2023-09|| ''[[Starter Kit 2023]]'' || style="text-align:center;" | || || Box set || Starter set #10
+|-
+| 2023-09|| ''[[Secret Lair Drop Series: Dan Frazier's Mox Box]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #48
+|-
+| 2023-09|| ''[[Secret Lair Drop Series: Ponies: The Galloping 2 - Extra Life 2023|Ponies: The Galloping 2 - Extra Life 2023]]'' || style="text-align:center;"| {{keyrune|PTG}} || SLD || Box set || [[Secret Lair]] release #49
+|-
+| 2023-09|| ''[[Secret Lair Drop Series: Li’l’est Walkers]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #50
+|-
+| 2023-10|| ''[[Secret Lair Drop Series: Spookydrop 2023]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #51
+|-
+| 2023-10|| ''[[Alchemy: Eldraine]]'' || style="text-align:center;"| {{keyrune|Y24}} || Y24 || Digital set || Alchemy release #8
+|-
+| 2023-10|| ''[[Doctor Who Commander Decks]]'' || style="text-align:center;"| {{keyrune|WHO}} || WHO || Supplemental set || [[Universes Beyond]] set #5<br>Commander Decks set #19, Planechase set #4
+|-
+| 2023-11|| ''[[The Lord of the Rings: Tales of Middle-earth/Holiday Release|The Lord of the Rings: Holiday Release]]'' || style="text-align:center;"| {{keyrune|LTC}} || LTC || Supplemental set || [[Universes Beyond]] set #4b
+|-
+| 2023-11|| ''[[The Lost Caverns of Ixalan]]'' || style="text-align:center;"| {{keyrune|LCI}} || LCI || Expansion set || 98<sup>th</sup> expansion
+|-
+| 2023-11|| ''[[The Lost Caverns of Ixalan/Commander decks]]'' || style="text-align:center;"| {{keyrune|LCC}} || LCC || Box set || Commander Decks set #20
+|-
+| 2023-11|| ''[[Jurassic World Collection]]'' || style="text-align:center;"| {{keyrune|REX}} || REX || Supplemental set || [[Universes Beyond]] set #6, Booster insert set #2
+|-
+| 2023-11|| [[Special Guest]] reprints || style="text-align:center;"| {{keyrune|SPG}} || SPG || Compilation set || Introduction and first printing 
+|-
+| 2023-11|| ''[[Secret Lair Drop Series: Secretversary 2023]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #52
+|-
+| 2023-12|| ''[[Alchemy: Ixalan]]'' || style="text-align:center;"| {{keyrune|Y24}} || Y24 || Digital set || Alchemy release #9
+|-
+| 2023-12|| ''[[Secret Lair: Calling All Hydra Heads]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #53
+|-
+| 2023-12|| ''[[Secret Lair Drop Series: Doctor Who: Regeneration]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #54
+|-
+| 2024-01|| ''[[Ravnica Remastered]]'' || style="text-align:center;"| {{keyrune|RVR}} || RVR || Compilation set || Tabletop Remastered set #4
+|-
+| 2024-01|| ''[[Secret Lair Commander Deck: Raining Cats & Dogs]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || Secret Lair Commander deck #4
+|-
+| 2024-02|| ''[[Secret Lair Drop Series: Winter Superdrop 2024]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #53
+|-
+| 2024-02|| ''[[Murders at Karlov Manor]]'' || style="text-align:center;"| {{keyrune|MKM}} || MKM || Expansion set || 99<sup>th</sup> expansion
+|-
+| 2024-02|| ''[[Murders at Karlov Manor/Commander decks]]'' || style="text-align:center;"| {{keyrune|MKC}} || MKC || Box set || Commander Decks set #21
+|-
+| 2024-02|| ''[[Ravnica: Clue Edition]]'' || style="text-align:center;"| {{keyrune|CLU}} || CLU || Box set || Annex set #9
+|-
+| 2024-02|| ''[[Secret Lair Drop Series: Burning Revelations]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #54
+|-
+| 2024-02|| ''[[Secret Lair Drop Series: Sheldon's Spellbook]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #55
+|-
+| 2023-12|| ''[[Alchemy: Karlov Manor]]'' || style="text-align:center;"| {{keyrune|Y24}} || Y24 || Digital set || Alchemy release #10
+|-
+| 2024-03|| ''[[Fallout]]'' || style="text-align:center;"| {{keyrune|PIP}} || PIP || Supplemental set || [[Universes Beyond]] set #7, Commander Decks set #22
+|-
+| 2024-04|| ''[[Outlaws of Thunder Junction]]'' || style="text-align:center;"| {{keyrune|OTJ}} || OTJ || Expansion set || 100<sup>th</sup> expansion
+|-
+| 2024-04|| ''[[Breaking News]]'' || style="text-align:center;"| {{keyrune|OTP}} || OTP || Compilation set || [[Bonus sheet]] set
+|-
+| 2024-04|| ''[[The Big Score]]'' || style="text-align:center;"| {{keyrune|BIG}} || BIG || Supplemental set || 2<sup>nd</sup> [[micro set]], turned into a [[Bonus sheet]].
+|-
+| 2024-04|| ''[[Outlaws of Thunder Junction/Commander decks]]'' || style="text-align:center;"| {{keyrune|OTC}} || OTC || Box set || Commander Decks set #23
+|-
+| 2024-05|| ''[[Alchemy: Thunder Junction]]'' || style="text-align:center;"| {{keyrune|Y24}} || Y24 || Digital set || Alchemy release #11
+|-
+| 2024-05|| ''[[Secret Lair Drop Series: Spring Superdrop 2024]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #56
+|-
+| 2024-06|| ''[[Modern Horizons III]]'' || style="text-align:center;"| {{keyrune|MH3}} || MH3 || Supplemental set || Straight-to-Modern set #4
+|-
+| 2024-06|| ''[[Modern Horizons 3/Commander decks]]'' || style="text-align:center;"| {{keyrune|M3C}} || M3C || Box set || Commander Decks set #24
+|-
+| 2024-06|| ''[[Secret Lair Drop Series: Summer Superdrop 2024]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #57
+|-
+| 2024-07|| ''[[Assassin's Creed]]'' || style="text-align:center;"| {{keyrune|ACR}} || ACR || Supplemental set || [[Universes Beyond]] set #8, Straight-to-Modern set #5
+|-
+| 2024-07|| ''[[Secret Lair Drop Series: Inside an Elevator Superdrop]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #58
+|-
+| 2024-08|| ''[[Bloomburrow]]'' || style="text-align:center;"| {{keyrune|BLB}} || BLB || Expansion set || 101<sup>st</sup> expansion
+|-
+| 2024-08|| ''[[Bloomburrow/Commander decks]]'' || style="text-align:center;"| {{keyrune|BLC}} || BLC || Box set || Commander Decks set #25
+|-
+| 2024-08|| ''[[Mystery Booster 2]]'' || style="text-align:center;"| {{keyrune|MB2}} || MB2 || Supplemental set || Chaos Draft set #2 (Convention Edition)
+|-
+| 2024-08|| ''[[Alchemy: Bloomburrow]]'' || style="text-align:center;"| {{keyrune|Y25}} || Y25 || Digital set || Alchemy release #12
+|-
+| 2024-08|| ''[[Secret Lair Drop Series: Dungeons & Dragons 50th Anniversary Superdrop]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #59
+|-
+| 2024-09|| ''[[Duskmourn: House of Horror]]'' || style="text-align:center;"| {{keyrune|DSK}} || DSK || Expansion set || 102<sup>nd</sup> expansion
+|-
+| 2024-09|| ''[[Duskmourn: House of Horror/Commander decks]]'' || style="text-align:center;"| {{keyrune|DSC}} || DSC || Box set || Commander Decks set #26
+|-
+| 2024-09|| ''[[Secret Lair Drop Series: Camp Totally Safe Superdrop]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #60
+|-
+| 2024-10|| ''[[Secret Lair Drop Series: Pixel Perfect - Extra Life 2024]]'' || style="text-align:center;"|  || SLD || Box set || [[Secret Lair]] release #61
+|-
+| 2024-10|| ''[[Alchemy: Duskmourn]]'' || style="text-align:center;"| {{keyrune|Y25}} || Y25 || Digital set || Alchemy release #13
+|-
+| 2024-11|| ''[[Secret Lair Drop Series: Marvel Superdrop]]'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #62.
+|-
+| 2024-11|| ''[[Magic: The Gathering Foundations]]'' || style="text-align:center;"| {{keyrune|FDN}} || FDN || Core set || Foundation set #1
+|-
+| 2024-11|| ''[[Magic: The Gathering Foundations/Starter Collection|Magic: The Gathering Foundations Starter Collection]]'' Commander cards || style="text-align:center;"| {{keyrune|FDC}} || FDC || Supplemental set || TBA
+|-
+| 2024-11|| ''[[Foundations Jumpstart]]'' || style="text-align:center;"| {{keyrune|J25}} || J25 || Supplemental set || Jumpstart set #4
+|-
+| 2024-11|| ''[[Secret Lair Commander Deck: 20 Ways to Win]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] Commander deck #5
+|-
+| 2024-12|| ''[[Secret Lair Drop Series: The Fairest Drop of All]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #63. [[Chaos Vault]] release #1.
+|-
+| 2024-12|| ''[[Pioneer Masters]]'' || style="text-align:center;"| {{keyrune|PIO}} || PIO || Compilation set || MTG Arena set #7
+|-
+| 2025-01|| ''[[Innistrad Remastered]]'' || style="text-align:center;"| {{keyrune|INR}} || INR || Compilation set || Tabletop Remastered set #5
+|-
+| 2025-02|| ''[[Aetherdrift]]'' || style="text-align:center;"| {{keyrune|DFT}} || DFT || Expansion set || 103<sup>rd</sup> expansion
+|-
+| 2024-02|| ''[[Aetherdrift/Commander decks]]'' || style="text-align:center;"| {{keyrune|DRC}} || DRC || Box set || Commander Decks set #27
+|-
+| 2025-Q1|| ''Secret Lair Drop Series: SpongeBob SquarePants'' || style="text-align:center;" | {{keyrune|SLD}} || SLD || Box set || [[Secret Lair]] release #63
+|-
+| 2025-04|| ''[[Tarkir: Dragonstorm]]'' || style="text-align:center;"| {{keyrune|TDM}} || TDM || Expansion set || 104<sup>th</sup> expansion
+|-
+| 2025-04|| ''[[Spring Flourishes]]'' || style="text-align:center;"| {{keyrune|SLD}} || SLX || Promo set || [[SLX program]] promo release #1
+|-
+| 2025-06|| ''[[Final Fantasy]]'' || style="text-align:center;"| {{keyrune|FIN}} || FIN || Supplemental set || 105<sup>th</sup> expansion, [[Universes Beyond]] set #9
+|-
+| 2025-08|| ''[[Edge of Eternities]]'' || style="text-align:center;"| {{keyrune|EOE}} || EOE || Expansion set || 106<sup>th</sup> expansion
+|-
+| 2025-Q4|| ''[[Marvel's Spider-Man]]'' || style="text-align:center;"| {{keyrune|SPM}} || SPM || Supplemental set || 107<sup>th</sup> expansion, [[Universes Beyond]] set #10
+|-
+| 2025-Q4|| Unnamed ''[[Universes Beyond]]'' set || style="text-align:center;"| {{keyrune|}} ||  || Supplemental set || 108<sup>th</sup> expansion, [[Universes Beyond]] set #11
+|-
+<!-- | YYYY-MM || ''[[Set name]]'' || style="text-align:center;"| {{keyrune|Product code}} || Product code || Set type || Notes -->
+|}<noinclude>[[Category:Templates]]</noinclude>
