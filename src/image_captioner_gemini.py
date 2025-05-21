@@ -5,215 +5,401 @@ import json
 import cv2 as cv
 import numpy as np
 import os
-import PIL
+import backoff
+import shutil
 import base64
-
+from pathlib import Path
+import logging
 from transformers import BlipProcessor, BlipForConditionalGeneration
 from PIL import Image
 import matplotlib.pyplot as plt
-
-import time
+from pydantic import BaseModel
+import csv
+from datetime import datetime
 from google.genai.errors import ClientError
 from google.genai.errors import ServerError
-
-# Only run this block for Gemini Developer API
-client = genai.Client(api_key=os.environ['GEMINI_API_KEY'])
-
-openai.api_key = os.environ["OPENAI_API_KEY"]
-
-def encode_image_to_base64(image_path):
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode('utf-8')
+from typing import Dict
+from tqdm.asyncio import tqdm_asyncio
 
 
-# Function to encode the image
-def encode_image(image_path):
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode("utf-8")
+SYSTEM_PROMPT = """
+You are analyzing Magic: The Gathering card artwork for an AI training dataset. Create concise, descriptive captions that capture the essence, composition, and style of the fantasy artwork.
 
+CAPTION STYLE:
+Create a single flowing paragraph that captures:
+1. Visual Elements
+- Subject matter (creature, character, landscape, spell effect)
+- Composition and focal point
+- Color palette and lighting
+- Art style and technique
 
-def display(image, window_name="display", width=None, height=None, wait_key=0):
-    def mouse_callback(event, x, y, flags, param):
-        if event == cv.EVENT_MOUSEMOVE:
-            pixel_value = image[y, x]
-            cv.setWindowTitle(window_name, f"({x}, {y}): {pixel_value}")
+2. Fantasy Elements
+- Creature characteristics or character appearance
+- Environmental/setting details
+- Magical elements or effects
+- Mood and atmosphere
 
-    h, w = image.shape[:2]
-    if width is None and height is None:
-        dim = (w, h)
-    elif width is None:
-        ratio = height / float(h)
-        dim = (int(w * ratio), height)
-    else:
-        ratio = width / float(w)
-        dim = (width, int(h * ratio))
+IMPORTANT:
+- One cohesive paragraph, maximum 100 tokens
+- Focus on the visual artwork only, not card mechanics or rules
+- Describe the most significant visual elements first
+- Capture the fantasy atmosphere and mood
+- Be specific but concise about colors, creatures, and magical elements
+- Avoid speculation about card function or gameplay effects
+"""
 
-    cv.namedWindow(window_name, cv.WINDOW_NORMAL)
-    cv.resizeWindow(window_name, dim[0], dim[1]) # resize window
-    cv.setMouseCallback(window_name, mouse_callback)
-    cv.imshow(window_name, image)
-    cv.waitKey(wait_key)
-    cv.destroyWindow(window_name)
-
-
-def box_art(img):
-    """
-    Cut out the box art from the image.
-    """
-
-
-    # Define the box art area (example coordinates)
-    # size = (370, 265, 3)
-    left = 20
-    top = 40
-    right = img.width - left
-    bottom = img.height - 160
-
-    # Crop the image to the box art area
-    box_art = img.crop((left, top, right, bottom))
-
-        # Use proportional values
-    left = int(img.width * 0.07)
-    top = int(img.height * 0.11)
-    right = int(img.width * 0.93)
-    bottom = int(img.height * 0.56)
-
-    box_art = img.crop((left, top, right, bottom))
-
-
-    # Save or return the cropped image
-    box_art.save("box_art.png")
-    return np.array(box_art)
-
-
-def gemini_captioner(image_path, api_key):
-
-    client = genai.Client(api_key=api_key)
-
-    # my_file = client.files.upload(file=image_path)
-
-    # response = client.models.generate_content(
-    #     model="gemini-2.0-flash",
-    #     contents=[my_file, "Caption the art of this Magic the Gathering image."],
-    # )
-
-    # prompt = """List a few popular cookie recipes in JSON format.
-
-    # Use this JSON schema:
-
-    # Recipe = {'recipe_name': str, 'ingredients': list[str]}
-    # Return: list[Recipe]"""
-    # my_prompt = (
-    # "You are an expert art critic specializing in fantasy illustrations. "
-    # "Describe this cropped artwork from a Magic: The Gathering card in vivid detail. "
-    # "Focus on: "
-    # "1. The central figure(s) or subject(s): their appearance, attire, species (e.g., human, elf, dragon, beast). "
-    # "2. The setting or background: environment, notable features, atmosphere. "
-    # "3. Any visible action or magical effects: spells, combat, movement. "
-    # "4. The overall mood and artistic style: e.g., dark, ethereal, dynamic, painterly. "
-    # "Provide a comprehensive and evocative description in a single text corpus."
-    # )
-    
-    # with open(image_path, 'rb') as f:
-    #     image_bytes = f.read()
-
-    from pydantic import BaseModel
-
-    class Recipe(BaseModel):
-        caption: str
-        # tags: list[str]
-
-    image_bytes = encode_image(image_path)
-
-    response = client.models.generate_content(
-    model='gemini-2.0-flash',
-    contents=[
-    types.Part.from_bytes(
-        data=image_bytes,
-        mime_type='image/png',
-    ),
-    # my_prompt
-    # "Provide a description of the features of the art in single short paragraph. "
-    # 'I need a caption that describes the image in single short paragraph, focus on subjects, background and colors, avoid useless informations.'
-    'I need a caption that describes the image in a short paragraph, focus on the main image features, avoid useless informations.'
-
-    ],
-    config={
-    "response_mime_type": "application/json",
-    "response_schema": Recipe,
+RESPONSE_SCHEMA = {
+  "type": "object",
+  "properties": {
+    "caption": {
+      "type": "string",
+      "description": "Concise description of the card artwork (max 100 tokens)"
     },
+    "subject_type": {
+      "type": "string",
+      "enum": ["creature", "character", "landscape", "spell/effect", "artifact", "multiple_elements"],
+      "description": "Primary subject matter in the artwork"
+    },
+    "color_palette": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Dominant colors in the artwork (2-4 colors)"
+    },
+    "mood": {
+      "type": "string",
+      "description": "Overall mood/atmosphere of the artwork"
+    }
+  },
+  "required": [
+    "caption",
+    "subject_type",
+    "color_palette",
+    "mood"
+  ]
+}
+
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('gemini_captioning.log'),
+        logging.StreamHandler()
+    ]
+)
+
+
+class CardArtCaptioner:
+    def __init__(self, api_key: str, base_dir: str, version: str = "001"):
+        self.base_dir = Path(base_dir)
+        self.version = version
+        # self.model_name = "gemini-1.5-pro"
+        self.model_name = "gemini-2.0-flash"
+
+        # Folders initialization
+        # self.raw_dir = self.base_dir
+        # self.dataset_dir = self.base_dir.parent / "captioned_dataset" / "dataset"
+        # self.junk_dir = self.base_dir.parent / "captioned_dataset" / "junk"
+
+        self.results_csv = self.base_dir / "gemini_captioning.csv"
+        self.metadata_json = self.base_dir / "metadata.json"
+        # self.metadata_csv = self.base_dir / "metadata.csv"
+
+        # os.makedirs(self.dataset_dir, exist_ok=True)
+        # os.makedirs(self.junk_dir, exist_ok=True)
+
+        # Initialize Gemini client
+        self.client = genai.Client(api_key=api_key)
+
+        self.processed_files = self._load_processed_files()
+        self._create_metadata()
+
+    def _create_metadata(self):
+        """Create or update metadata file"""
+        if not self.metadata_json.exists():
+            metadata = {
+                "model": self.model_name,
+                "date": datetime.now().isoformat(),
+                "version": self.version,
+                "system_prompt": SYSTEM_PROMPT,  # Global constant defined elsewhere
+                "author": "Fabio Loddo",
+            }
+            with open(self.metadata_json, 'w') as f:
+                json.dump(metadata, f, indent=2)
+
+    def _load_processed_files(self) -> set:
+        """Load list of already processed files from CSV"""
+        processed = set()
+        if self.results_csv.exists():
+            with open(self.results_csv, 'r') as f:
+                reader = csv.DictReader(f)
+                processed.update(row['filename'] for row in reader)
+        return processed
+
+    @backoff.on_exception(
+        backoff.expo,
+        (Exception),
+        max_tries=10,
+        max_time=300
+    )
+    async def _analyze_image(self, image_path: Path) -> Dict:
+        """Analyze single image with Gemini"""
+
+        # with open(image_path, 'rb') as f:
+        #     image_bytes = f.read()
+
+        # Open the image and crop it
+        pil_image = Image.open(image_path)
+        # conver rgba to rgb
+        if pil_image.mode == "RGBA":
+            r, g, b, a = pil_image.split()
+            pil_image = Image.merge("RGB", (r, g, b))
+        # shape
+        print(pil_image.size)
+        cropped_image = self._crop_image_art(pil_image)
+        print(cropped_image.size)
+        
+        # Create a BytesIO object to store the image bytes
+        from io import BytesIO
+        buffer = BytesIO()
+        cropped_image.save(buffer, format="JPEG")
+        image_bytes = buffer.getvalue()
+
+        response = await self.client.aio.models.generate_content(
+            model=self.model_name,
+            contents=[
+                types.Part.from_text(text=SYSTEM_PROMPT),
+                # types.Part.from_text(text=task),
+                types.Part.from_bytes(data=image_bytes, mime_type="image/jpeg")
+            ],
+            config=types.GenerateContentConfig(
+                temperature=0.4,
+                top_p=0.8,
+                top_k=40,
+                response_mime_type="application/json",
+                response_schema=RESPONSE_SCHEMA
+            )
+        )
+
+        return json.loads(response.text)
+    
+    def _crop_image_art(self, img: Image) -> np.ndarray:
+        """
+        Cut out the box art from the image.
+        """
+
+        # Define the box art area (example coordinates)
+        # size = (370, 265, 3)
+        left = 20
+        top = 40
+        right = img.width - left
+        bottom = img.height - 160
+
+        # Crop the image to the box art area
+        box_art = img.crop((left, top, right, bottom))
+
+            # Use proportional values
+        left = int(img.width * 0.07)
+        top = int(img.height * 0.11)
+        right = int(img.width * 0.93)
+        bottom = int(img.height * 0.56)
+
+        box_art = img.crop((left, top, right, bottom))
+
+        return box_art
+
+
+    def _generate_caption(self, image_path: Path, caption: Dict) -> bool:
+        """
+        Args:
+            card_data (dict): A dictionary representing the card's JSON data.
+
+        Returns:
+            str: A descriptive caption for the card.
+        """
+
+        json_path = image_path.with_suffix('.json')
+        # load json data
+        with open(json_path, 'r') as f:
+            card_data = json.load(f)
+
+        if not isinstance(card_data, dict):
+            print("Error: Input must be a dictionary.")
+            return None
+
+        # --- Extract Key Information ---
+        name = card_data.get('name', 'Unnamed Card')
+        type_line = card_data.get('type_line', 'Unknown Type')
+        mana_cost = card_data.get('mana_cost', '')
+        colors = card_data.get('colors', [])
+        color_identity = card_data.get('color_identity', [])
+        oracle_text = card_data.get('oracle_text', '')
+        flavor_text = card_data.get('flavor_text', '')
+        artist = card_data.get('artist', 'Unknown Artist')
+        set_name = card_data.get('set_name', 'Unknown Set')
+        rarity = card_data.get('rarity', 'Unknown Rarity')
+        power = card_data.get('power', None)
+        toughness = card_data.get('toughness', None)
+
+        # if any of the following types is present in the type_line, skip the caption
+        non_playable_types = ['Class', 'Basic Land', 'Artifact', 'Token', 'Emblem', 'Double-faced', 'Land', 'Dungeon', 'Conspiracy', 'Phenomenon', 'Plane', 'Scheme', 'Vanguard', 'Attraction']
+        if any(nt in type_line for nt in non_playable_types):
+            return False
+
+        # --- Determine Color Description ---
+        color_source = colors if colors else color_identity
+        if color_source:
+            color_map = {'W': 'White', 'U': 'Blue', 'B': 'Black', 'R': 'Red', 'G': 'Green'}
+            color_names = [color_map.get(c, c) for c in color_source]
+            if len(color_names) > 1:
+                color_description = f"{', '.join(color_names[:-1])} and {color_names[-1]}"
+            else:
+                color_description = color_names[0]
+        elif "Land" in type_line or not mana_cost:
+            color_description = "Colorless"
+        else:
+            color_description = "Colorless"
+
+        # --- Build the Caption ---
+        description_parts = []
+
+        # Core identity
+        description_parts.append(f"Magic: The Gathering card art for '{name}', a {color_description} {type_line}.")
+
+        # Add mana cost
+        if mana_cost:
+            description_parts.append(f"Mana Cost: {mana_cost}.")
+
+        # Add oracle text and flavor text
+        if flavor_text:
+            description_parts.append(f"The card evokes themes of: \"{flavor_text}\".")
+        if oracle_text:
+            description_parts.append(f"The card text mentions: \"{oracle_text}\".")
+
+
+        # Add power/toughness if available
+        if power is not None and toughness is not None:
+            description_parts.append(f"Power/Toughness: {power}/{toughness} (can deal {power} damage and take {toughness} damage).")
+
+        # Add artist, set, and rarity
+        description_parts.append(f"Artwork by {artist}, from the '{set_name}' set.")
+        description_parts.append(f"Rarity: {rarity}.")
+
+        # Mention colors explicitly
+        if colors:
+            color_list = ', '.join(colors)
+            description_parts.append(f"Colors: {color_list}.")
+
+        # --- Combine into final caption ---
+        final_caption = " ".join(description_parts)
+
+        # add art description
+        final_caption += f" Art description: {caption['caption']}"
+
+        caption_path = image_path.with_suffix('.txt')
+        # Save caption to txt file
+        with open(caption_path, 'w') as f:
+            f.write(final_caption)
+
+        return True
+    
+
+    # def _save_caption(self, image_path: Path, caption: dict, target_dir: Path):
+    #     """Save caption to txt file"""
+
+    #     final_caption = caption["caption"] + (f" This image features a {caption['shot_framing']} shot of "
+    #                                           f"a {caption['garment_category']} garment, "
+    #                                           f"captured from the {caption['view_angle']}. "
+    #                                           f"Garment material is {caption['material']}")
+
+    #     caption_path = target_dir / f"{image_path.stem}.txt"
+    #     with open(caption_path, 'w') as f:
+    #         f.write(final_caption)
+
+
+    def _update_csv(self, filename: str, caption: str):
+        """Update results CSV file"""
+        file_exists = self.results_csv.exists()
+
+        with open(self.results_csv, 'a', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=['filename', 'caption'])
+            if not file_exists:
+                writer.writeheader()
+            writer.writerow({
+                'filename': filename,
+                'caption': caption
+            })
+
+    def _get_relative_path(self, path: Path) -> Path:
+        """Convert absolute path to path relative to project root"""
+        try:
+            # Assuming self.base_dir's parent is the project root
+            project_root = self.base_dir.parent.parent
+            return path.relative_to(project_root)
+        except ValueError:
+            # If the path is not relative to project root, return the original path
+            return path
+
+
+    async def process_images(self):
+        """Process all images"""
+        image_paths = [p for p in self.base_dir.glob('**/*.[jJ][pP][gG]') if p.name not in self.processed_files]
+        print(f"Found {len(image_paths)} images to process.")
+        async for image_path in tqdm_asyncio(image_paths, desc="Processing images", unit="img"):
+            try:
+
+                result = await self._analyze_image(image_path)
+
+                await asyncio.sleep(1)
+
+                # target_dir = self.dataset_dir if result['valid'] else self.junk_dir
+
+                # Copy image
+                # shutil.copy2(image_path, target_dir / image_path.name)
+
+                # Save caption
+                # self._save_caption(image_path, result, target_dir)
+                valid_caption = self._generate_caption(image_path, result) 
+                if not valid_caption:
+                    logging.info(f"Skipping {image_path.name} due to non-playable type.")
+                    continue
+
+                # Update CSV
+                self._update_csv(
+                    filename=image_path.name,
+                    caption=result['caption']
+                )
+
+                self.processed_files.add(image_path.name)
+
+                # logging.info(f"Successfully processed {image_path.name}")
+
+            except Exception as e:
+                logging.error(f"Error processing {image_path.name}: {str(e)}")
+                continue
+
+
+async def main():
+    # Configuration
+    API_KEY = os.getenv("GEMINI_API_KEY")
+    BASE_DIR = "/home/fabioloddo/repos/GathererImageGatherer/data/images"
+    VERSION = "001"
+
+    captioner = CardArtCaptioner(
+        api_key=API_KEY,
+        base_dir=BASE_DIR,
+        version=VERSION
     )
 
-    # print(response.text)
-
-    return response.text
-
-
-def main():
-    # cycle trough all images for all sets and generate captions to append to text files
-    sets = os.listdir("data/images/")
-    MAX_RETRIES = 3
-    SLEEP_SECONDS = 30
-
-    for set in sets:
-        for image_name in os.listdir(os.path.join("data/images/", set)):
-            if not any(image_name.lower().endswith(ext) for ext in ('.png', '.jpg', '.jpeg', '.bmp')):
-                continue
-            image_path = os.path.join("data/images/", set, image_name)
-            img = Image.open(image_path)
-            cropped_art = box_art(img)
-
-            temp_cropped_path = f"./temp/temp_box_art_{image_name}"
-            Image.fromarray(cropped_art).save(temp_cropped_path, "PNG")
-
-            # Retry logic
-            caption = None
-            for attempt in range(MAX_RETRIES):
-                try:
-                    caption = gemini_captioner(temp_cropped_path, os.environ["GEMINI_API_KEY"])
-                    response = json.loads(caption)
-                    break
-                except ClientError as e:
-                    if e.code == 429:
-                        print("Rate limit hit, retrying...")
-                        time.sleep(SLEEP_SECONDS)
-                    else:
-                        raise e
-                except ServerError as e:
-                    print(f"Server error: {e}, retrying...")
-                    time.sleep(SLEEP_SECONDS)
-
-            if response:
-                text_path = os.path.splitext(image_path)[0] + ".txt"
-                with open(text_path, "a", encoding="utf-8") as txt_file:
-                    txt_file.write(f"\nArt description: {response.get('caption', '')}\n")
-                print(f"Caption for {image_name} saved to {text_path}")
-
-            os.remove(temp_cropped_path)
+    await captioner.process_images()
 
 
 if __name__ == "__main__":
-    main()
+    import asyncio
 
-    # image_path = "data/images/Alara_Reborn/144249.jpg"
+    asyncio.run(main())
 
-    # # Open the image
-    # img = Image.open(image_path)
-
-    # plt.imshow(img)
-    # plt.axis('off')  # Hide the axes
-    # plt.show()
-
-    # bb = box_art(img)
-
-    # plt.imshow(np.array(bb))
-    # plt.axis('off')  # Hide the axes
-    # plt.show()
-
-    # text = gemini_captioner("box_art.png", os.environ["GEMINI_API_KEY"])
-
-    # text = json.loads(text)
-
-    # print(text.get("caption"))
-
-
+    # TODO: add information for gemini to use as context, since it does not always understands the context of the image

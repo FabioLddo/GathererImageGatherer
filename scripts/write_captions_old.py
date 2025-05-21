@@ -1,53 +1,20 @@
 import requests
 import os
-import json
-import logging
-
 
 def create_caption_for_card(multiverse_id, image_path):
     try:
         api_url = f"https://api.scryfall.com/cards/multiverse/{multiverse_id}?language=en"
         response = requests.get(api_url)
-        
-        # Check HTTP status code first
-        if response.status_code == 404:
-            logging.warning(f"Card not found for multiverse_id {multiverse_id}: 404 Not Found")
-            return False
-            
         data = response.json()
-            
-        # Check if the response contains an error
-        if 'error' in data:
-            error_code = data.get('code', 'unknown')
-            error_details = data.get('details', 'No details provided')
-            logging.error(f"Error fetching data for {multiverse_id}: {error_code} - {error_details}")
-            return False
 
         # Generate the caption using the combined methodology
         caption = generate_caption(data)
-
-        if not caption:
-            logging.warning(f"Caption generation failed for {multiverse_id}.")
-            return False
-        
-        # save the json data to a file
-        json_path = os.path.splitext(image_path)[0] + ".json"
-        with open(json_path, "w", encoding="utf-8") as json_file:
-            json.dump(data, json_file, indent=4)
-
-        # Save the caption to a text file
+        print(f"Caption for {multiverse_id}: {caption}")
         text_path = os.path.splitext(image_path)[0] + ".txt"
         with open(text_path, "w", encoding="utf-8") as txt_file:
             txt_file.write(caption)
-
-        return True
-    
-    except requests.exceptions.RequestException as e:
-        logging.error(f"Request error for {multiverse_id}: {e}")
-        return False
     except Exception as e:
-        logging.error(f"Error creating caption file for {multiverse_id}: {e}")
-        return False
+        print(f"Error creating caption file for {multiverse_id}: {e}")
 
 
 def generate_caption(card_data):
@@ -73,13 +40,6 @@ def generate_caption(card_data):
     artist = card_data.get('artist', 'Unknown Artist')
     set_name = card_data.get('set_name', 'Unknown Set')
     rarity = card_data.get('rarity', 'Unknown Rarity')
-    power = card_data.get('power', None)
-    toughness = card_data.get('toughness', None)
-
-    # if any of the following types is present in the type_line, skip the caption
-    non_playable_types = ['Class', 'Basic Land', 'Artifact', 'Token', 'Emblem', 'Double-faced', 'Land', 'Dungeon', 'Conspiracy', 'Phenomenon', 'Plane', 'Scheme', 'Vanguard', 'Attraction']
-    if any(nt in type_line for nt in non_playable_types):
-        return False
 
     # --- Determine Color Description ---
     color_source = colors if colors else color_identity
@@ -103,18 +63,13 @@ def generate_caption(card_data):
 
     # Add mana cost
     if mana_cost:
-        description_parts.append(f"Mana Cost: {mana_cost}.")
+        description_parts.append(f"Mana cost: {mana_cost}.")
 
     # Add oracle text and flavor text
     if flavor_text:
         description_parts.append(f"The card evokes themes of: \"{flavor_text}\".")
     if oracle_text:
         description_parts.append(f"The card text mentions: \"{oracle_text}\".")
-
-
-    # Add power/toughness if available
-    if power is not None and toughness is not None:
-        description_parts.append(f"Power/Toughness: {power}/{toughness} (can deal {power} damage and take {toughness} damage).")
 
     # Add artist, set, and rarity
     description_parts.append(f"Artwork by {artist}, from the '{set_name}' set.")
@@ -129,18 +84,3 @@ def generate_caption(card_data):
     caption = " ".join(description_parts)
 
     return caption
-
-
-# if __name__ == "__main__":
-#     # Example usage
-#     multiverse_id = "527289"
-# https://api.scryfall.com/cards/multiverse/527289?language=en
-#     image_path = "./temp/temp_box_art_527289.png"
-#     image_path = "data/images/Adventures_in_the_Forgotten_Realms/527289.jpg"
-#     img = Image.open(image_path)
-    
-#     success = create_caption_for_card(multiverse_id, image_path, img)
-#     if success:
-#         print(f"Caption created successfully for {multiverse_id}.")
-#     else:
-#         print(f"Failed to create caption for {multiverse_id}.")
