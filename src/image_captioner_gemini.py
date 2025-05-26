@@ -21,6 +21,12 @@ from google.genai.errors import ServerError
 from typing import Dict
 from tqdm.asyncio import tqdm_asyncio
 
+import unicodedata
+
+def clean_unicode(text: str) -> str:
+    # Normalize Unicode to NFKD form and encode to ASCII
+    return unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
+
 
 SYSTEM_PROMPT = """
 You are analyzing Magic: The Gathering card artwork for an AI training dataset. Create concise, descriptive captions that capture the essence, composition, and style of the fantasy artwork.
@@ -145,8 +151,12 @@ class CardArtCaptioner:
         max_tries=10,
         max_time=300
     )
-    async def _analyze_image(self, image_path: Path) -> Dict:
+    async def _analyze_image(self, image_path: Path, card_data: Dict) -> Dict:
         """Analyze single image with Gemini"""
+
+        card_name = card_data.get('name', 'Unnamed Card')
+        flavor_text = card_data.get('flavor_text', '')
+        task = f"The card is named '{card_name}' and has the flavor text: '{flavor_text}'."
 
         # with open(image_path, 'rb') as f:
         #     image_bytes = f.read()
@@ -158,9 +168,9 @@ class CardArtCaptioner:
             r, g, b, a = pil_image.split()
             pil_image = Image.merge("RGB", (r, g, b))
         # shape
-        print(pil_image.size)
+        # print(pil_image.size)
         cropped_image = self._crop_image_art(pil_image)
-        print(cropped_image.size)
+        # print(cropped_image.size)
         
         # Create a BytesIO object to store the image bytes
         from io import BytesIO
@@ -172,7 +182,7 @@ class CardArtCaptioner:
             model=self.model_name,
             contents=[
                 types.Part.from_text(text=SYSTEM_PROMPT),
-                # types.Part.from_text(text=task),
+                types.Part.from_text(text=task),
                 types.Part.from_bytes(data=image_bytes, mime_type="image/jpeg")
             ],
             config=types.GenerateContentConfig(
@@ -212,7 +222,7 @@ class CardArtCaptioner:
         return box_art
 
 
-    def _generate_caption(self, image_path: Path, caption: Dict) -> bool:
+    def _generate_caption(self, image_path: Path, caption: Dict, card_data: Dict) -> bool:
         """
         Args:
             card_data (dict): A dictionary representing the card's JSON data.
@@ -220,11 +230,6 @@ class CardArtCaptioner:
         Returns:
             str: A descriptive caption for the card.
         """
-
-        json_path = image_path.with_suffix('.json')
-        # load json data
-        with open(json_path, 'r') as f:
-            card_data = json.load(f)
 
         if not isinstance(card_data, dict):
             print("Error: Input must be a dictionary.")
@@ -299,6 +304,10 @@ class CardArtCaptioner:
         # add art description
         final_caption += f" Art description: {caption['caption']}"
 
+        # convert all to utf-8
+        # final_caption = final_caption.encode('utf-8', 'ignore').decode('utf-8').replace("\u2014", "-")
+        final_caption = clean_unicode(final_caption)
+
         caption_path = image_path.with_suffix('.txt')
         # Save caption to txt file
         with open(caption_path, 'w') as f:
@@ -346,12 +355,51 @@ class CardArtCaptioner:
 
     async def process_images(self):
         """Process all images"""
-        image_paths = [p for p in self.base_dir.glob('**/*.[jJ][pP][gG]') if p.name not in self.processed_files]
-        print(f"Found {len(image_paths)} images to process.")
-        async for image_path in tqdm_asyncio(image_paths, desc="Processing images", unit="img"):
+        # image_paths = [p for p in self.base_dir.glob('**/*.[jJ][pP][gG]') if p.name not in self.processed_files]
+        # print(f"Found {len(image_paths)} images to process.")
+
+        # Get all set directories
+        set_dirs = [d for d in self.base_dir.glob('*') if d.is_dir()]
+        print(f"Found {len(set_dirs)} sets to process.")
+        
+        # Get completion status for each set
+        set_stats = {}
+        for set_dir in set_dirs:
+            set_name = set_dir.name
+            all_images = list(set_dir.glob('*.[jJ][pP][gG]'))
+            processed_images = [img for img in all_images if img.name in self.processed_files]
+            
+            total_count = len(all_images)
+            processed_count = len(processed_images)
+            completion_percent = (processed_count / total_count * 100) if total_count > 0 else 0
+            
+            set_stats[set_name] = {
+                'total': total_count,
+                'processed': processed_count,
+                'completion': completion_percent
+            }
+            
+            print(f"Set {set_name}: {processed_count}/{total_count} images captioned ({completion_percent:.2f}%)")
+        
+        # Find unprocessed images
+        unprocessed_images = []
+        for set_dir in set_dirs:
+            for img_path in set_dir.glob('*.[jJ][pP][gG]'):
+                if img_path.name not in self.processed_files:
+                    unprocessed_images.append(img_path)
+        
+        print(f"Found {len(unprocessed_images)} unprocessed images across all sets.")
+    
+        async for image_path in tqdm_asyncio(unprocessed_images, desc="Processing images", unit="img"):
+        # async for image_path in tqdm_asyncio(image_paths, desc="Processing images", unit="img"):
             try:
 
-                result = await self._analyze_image(image_path)
+                json_path = image_path.with_suffix('.json')
+                # load json data
+                with open(json_path, 'r') as f:
+                    card_data = json.load(f)
+
+                result = await self._analyze_image(image_path, card_data)
 
                 await asyncio.sleep(1)
 
@@ -361,8 +409,10 @@ class CardArtCaptioner:
                 # shutil.copy2(image_path, target_dir / image_path.name)
 
                 # Save caption
+
+
                 # self._save_caption(image_path, result, target_dir)
-                valid_caption = self._generate_caption(image_path, result) 
+                valid_caption = self._generate_caption(image_path, result, card_data) 
                 if not valid_caption:
                     logging.info(f"Skipping {image_path.name} due to non-playable type.")
                     continue
@@ -375,7 +425,21 @@ class CardArtCaptioner:
 
                 self.processed_files.add(image_path.name)
 
+
+                # Get set name from the image path
+                set_name = image_path.parts[-2]  # The parent directory name
+                
+                # Update and log completion status for this set
+                set_stats[set_name]['processed'] += 1
+                set_stats[set_name]['completion'] = (set_stats[set_name]['processed'] / set_stats[set_name]['total'] * 100)
+                
+                if set_stats[set_name]['processed'] == set_stats[set_name]['total']:
+                    logging.info(f"🎉 Set {set_name} is now completely captioned!")
+                
+
                 # logging.info(f"Successfully processed {image_path.name}")
+                logging.info(f"Successfully processed {image_path}: {result['caption']}")
+
 
             except Exception as e:
                 logging.error(f"Error processing {image_path.name}: {str(e)}")
@@ -402,4 +466,5 @@ if __name__ == "__main__":
 
     asyncio.run(main())
 
-    # TODO: add information for gemini to use as context, since it does not always understands the context of the image
+    # TODO: add information for gemini to use as context, since it does not always understands the context of the image - done
+    # TODO: add glob that divides for set, so that i have some full sets to train on - done

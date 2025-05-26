@@ -1,6 +1,4 @@
 import json
-import os
-import shutil
 import logging
 import csv
 from pathlib import Path
@@ -10,9 +8,14 @@ import torch
 import torchvision.transforms as T
 from torchvision.transforms.functional import InterpolationMode
 from transformers import AutoModel, AutoTokenizer
-from tqdm import tqdm
-import math
-import numpy as np
+
+from tqdm.asyncio import tqdm_asyncio
+
+import unicodedata
+
+def clean_unicode(text: str) -> str:
+    # Normalize Unicode to NFKD form and encode to ASCII
+    return unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
 
 # Configure logging
 logging.basicConfig(
@@ -24,17 +27,45 @@ logging.basicConfig(
     ]
 )
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 # Simplified prompt for the InternVL model
-SYSTEM_PROMPT = """You are analyzing Magic: The Gathering card artwork. Create a concise, descriptive caption 
-that captures the visual elements, composition, color palette, style, fantasy elements, and mood of the artwork. 
-Focus only on the visual aspects, not card mechanics. Keep your response under 100 tokens."""
+# SYSTEM_PROMPT = """You are analyzing Magic: The Gathering card artwork. Create a concise, descriptive caption 
+# that captures the visual elements, composition, color palette, style, fantasy elements, and mood of the artwork. 
+# Focus only on the visual aspects, not card mechanics. Keep your response under 100 tokens."""
+
+SYSTEM_PROMPT = """
+You are analyzing Magic: The Gathering card artwork for an AI training dataset. Create concise, descriptive captions that capture the essence, composition, and style of the fantasy artwork.
+
+CAPTION STYLE:
+Create a single flowing paragraph that captures:
+1. Visual Elements
+- Subject matter (creature, character, landscape, spell effect)
+- Composition and focal point
+- Color palette and lighting
+- Art style and technique
+
+2. Fantasy Elements
+- Creature characteristics or character appearance
+- Environmental/setting details
+- Magical elements or effects
+- Mood and atmosphere
+
+IMPORTANT:
+- One cohesive paragraph, maximum 100 tokens
+- Focus on the visual artwork only, not card mechanics or rules
+- Describe the most significant visual elements first
+- Capture the fantasy atmosphere and mood
+- Be specific but concise about colors, creatures, and magical elements
+- Avoid speculation about card function or gameplay effects
+"""
 
 class InternVLCardArtCaptioner:
-    def __init__(self, base_dir: str, model_path: str = 'OpenGVLab/InternVL3-8B', version: str = "001"):
+    def __init__(self, base_dir: str, model_path: str = 'OpenGVLab/InternVL2-8B', version: str = "001"):
         self.base_dir = Path(base_dir)
         self.version = version
         self.model_path = model_path
-        self.model_name = "InternVL3-8B"
+        self.model_name = "InternVL2-8B"
 
         # Folders initialization
         self.results_csv = self.base_dir / "intern_captioning.csv"
@@ -46,59 +77,56 @@ class InternVLCardArtCaptioner:
         self.processed_files = self._load_processed_files()
         self._create_metadata()
 
-    def _load_model(self):
-        """Load the InternVL model and tokenizer"""
-        # Define device map for model
-        device_map = self._split_model(self.model_name)
+    # def _load_model(self):
+    #     """Load the InternVL model and tokenizer"""
+    #     # Define device map for model
+    #     device_map = self._split_model(self.model_name)
         
-        # Load model with optimizations
-        self.model = AutoModel.from_pretrained(
-            self.model_path,
-            torch_dtype=torch.bfloat16,
-            load_in_8bit=False,
-            low_cpu_mem_usage=True,
-            use_flash_attn=True,
-            trust_remote_code=True,
-            device_map=device_map).eval()
+    #     # Load model with optimizations
+    #     self.model = AutoModel.from_pretrained(
+    #         self.model_path,
+    #         torch_dtype=torch.bfloat16,
+    #         load_in_8bit=False,
+    #         low_cpu_mem_usage=True,
+    #         use_flash_attn=True,
+    #         trust_remote_code=True,
+    #         device_map=device_map).eval()
         
-        self.tokenizer = AutoTokenizer.from_pretrained(
-            self.model_path, 
-            trust_remote_code=True, 
-            use_fast=False
+    #     self.tokenizer = AutoTokenizer.from_pretrained(
+    #         self.model_path, 
+    #         trust_remote_code=True, 
+    #         use_fast=False
+    #     )
+        
+    #     # Set generation config
+    #     self.generation_config = dict(max_new_tokens=128, do_sample=True)
+
+        # Load InterVL2-8B model, only need 24G VRAM,if you wanna to load bigger models like 26B or 72B,you should need 1-3 80G A100
+    def _load_model(self, model_name_or_path="OpenGVLab/InternVL2-8B"):
+        model = (
+            AutoModel.from_pretrained(
+                model_name_or_path,
+                torch_dtype=torch.bfloat16,
+                low_cpu_mem_usage=True,
+                trust_remote_code=True,
+            )
+            .eval()
+            .to(device)
         )
-        
+
+        self.model = model
+
+        tokenizer = AutoTokenizer.from_pretrained(
+            model_name_or_path, trust_remote_code=True, use_fast=False
+        )
+
+        self.tokenizer = tokenizer
+
         # Set generation config
         self.generation_config = dict(max_new_tokens=128, do_sample=True)
-        
-    def _split_model(self, model_name):
-        """Split model across available GPUs"""
-        device_map = {}
-        world_size = torch.cuda.device_count()
-        config = AutoTokenizer.from_pretrained(self.model_path, trust_remote_code=True).config
-        num_layers = config.llm_config.num_hidden_layers
-        
-        # Since the first GPU will be used for ViT, treat it as half a GPU
-        num_layers_per_gpu = math.ceil(num_layers / (world_size - 0.5))
-        num_layers_per_gpu = [num_layers_per_gpu] * world_size
-        num_layers_per_gpu[0] = math.ceil(num_layers_per_gpu[0] * 0.5)
-        
-        layer_cnt = 0
-        for i, num_layer in enumerate(num_layers_per_gpu):
-            for j in range(num_layer):
-                device_map[f'language_model.model.layers.{layer_cnt}'] = i
-                layer_cnt += 1
-                
-        device_map['vision_model'] = 0
-        device_map['mlp1'] = 0
-        device_map['language_model.model.tok_embeddings'] = 0
-        device_map['language_model.model.embed_tokens'] = 0
-        device_map['language_model.output'] = 0
-        device_map['language_model.model.norm'] = 0
-        device_map['language_model.model.rotary_emb'] = 0
-        device_map['language_model.lm_head'] = 0
-        device_map[f'language_model.model.layers.{num_layers - 1}'] = 0
 
-        return device_map
+        return (model, tokenizer)
+
 
     def _create_metadata(self):
         """Create or update metadata file"""
@@ -210,7 +238,7 @@ class InternVLCardArtCaptioner:
         box_art = img.crop((left, top, right, bottom))
         return box_art
 
-    def _analyze_image(self, image_path: Path, card_data: dict) -> str:
+    async def _analyze_image(self, image_path: Path, card_data: dict) -> str:
         """Analyze single image with InternVL"""
         card_name = card_data.get('name', 'Unnamed Card')
         flavor_text = card_data.get('flavor_text', '')
@@ -301,6 +329,11 @@ class InternVLCardArtCaptioner:
         # Add art description
         final_caption += f" Art description: {caption}"
 
+        # convert all to utf-8
+        # final_caption = final_caption.encode('utf-8', 'ignore').decode('utf-8').replace("\u2014", "-")
+
+        final_caption = clean_unicode(final_caption)
+
         caption_path = image_path.with_suffix('.txt')
         # Save caption to txt file
         with open(caption_path, 'w') as f:
@@ -321,7 +354,7 @@ class InternVLCardArtCaptioner:
                 'caption': caption
             })
 
-    def process_images(self):
+    async def process_images(self):
         """Process all images"""
         # Get all set directories
         set_dirs = [d for d in self.base_dir.glob('*') if d.is_dir()]
@@ -355,14 +388,18 @@ class InternVLCardArtCaptioner:
         
         print(f"Found {len(unprocessed_images)} unprocessed images across all sets.")
     
-        for image_path in tqdm(unprocessed_images, desc="Processing images", unit="img"):
+        async for image_path in tqdm_asyncio(unprocessed_images, desc="Processing images", unit="img"):
             try:
                 json_path = image_path.with_suffix('.json')
                 # Load json data
                 with open(json_path, 'r') as f:
                     card_data = json.load(f)
 
-                caption = self._analyze_image(image_path, card_data)
+                # caption = self._analyze_image(image_path, card_data)
+
+                caption = await self._analyze_image(image_path, card_data)
+
+                await asyncio.sleep(1)
 
                 # Generate and save caption
                 valid_caption = self._generate_caption(image_path, caption, card_data) 
@@ -395,10 +432,10 @@ class InternVLCardArtCaptioner:
                 continue
 
 
-def main():
+async def main():
     # Configuration
-    BASE_DIR = "/home/fabioloddo/repos/GathererImageGatherer/data/images"
-    MODEL_PATH = "OpenGVLab/InternVL3-8B"
+    BASE_DIR = "/workspace/images"
+    MODEL_PATH = "OpenGVLab/InternVL2-8B"
     VERSION = "001"
 
     captioner = InternVLCardArtCaptioner(
@@ -407,8 +444,10 @@ def main():
         version=VERSION
     )
 
-    captioner.process_images()
+    await captioner.process_images()
 
 
 if __name__ == "__main__":
-    main()
+    import asyncio
+
+    asyncio.run(main())
