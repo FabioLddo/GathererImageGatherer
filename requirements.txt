@@ -12,3 +12,16 @@ opencv-python
 numpy
 tqdm
 google
+torch
+torchvision
+transformers
+openai
+requests
+asyncio
+accelerate
+backoff
+tqdm
+black
+timm
+tokenizers
+einops_exts
