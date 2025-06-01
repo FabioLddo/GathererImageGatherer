@@ -244,10 +244,12 @@ class InternVLCardArtCaptioner:
         flavor_text = card_data.get('flavor_text', '')
         
         # Prepare prompt
-        prompt = f"<image>\nThis is a Magic: The Gathering card named '{card_name}'."
-        if flavor_text:
-            prompt += f" It has the flavor text: '{flavor_text}'."
-        prompt += f" {SYSTEM_PROMPT}"
+        # prompt = f"<image>\nThis is a Magic: The Gathering card named '{card_name}'."
+        # if flavor_text:
+        #     prompt += f" It has the flavor text: '{flavor_text}'."
+        # prompt += f" {SYSTEM_PROMPT}"
+
+        prompt = SYSTEM_PROMPT
         
         # Load and preprocess image
         pixel_values = self._load_image(image_path)
@@ -434,7 +436,7 @@ class InternVLCardArtCaptioner:
 
 async def main():
     # Configuration
-    BASE_DIR = "/workspace/images"
+    BASE_DIR = "/workspace/images_"
     MODEL_PATH = "OpenGVLab/InternVL2-8B"
     VERSION = "001"
 
