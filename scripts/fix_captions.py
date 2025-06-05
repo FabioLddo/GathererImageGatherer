@@ -54,9 +54,13 @@ def process_directory(directory):
     print(f"\nSummary: {success_count} files fixed, {error_count} files with errors or no periods.")
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Fix caption files by cropping text up to the last period.")
-    parser.add_argument("dir", nargs='?', default=".", help="Directory containing the caption files (default: current directory)")
+# if __name__ == "__main__":
+#     parser = argparse.ArgumentParser(description="Fix caption files by cropping text up to the last period.")
+#     parser.add_argument("dir", nargs='?', default=".", help="Directory containing the caption files (default: current directory)")
     
-    args = parser.parse_args()
-    process_directory(args.dir)
+#     args = parser.parse_args()
+#     process_directory(args.dir)
+
+
+# TODO i should add this process to the captioners, as a check, so that it is done automatically when captions are generated - DONE
+# TODO also it might be better to resize all images to a fixed size, so that they are all the same size OR use the scryfall images and caption them, since it is so "easy" - SHOULDN'T BE NEEDED

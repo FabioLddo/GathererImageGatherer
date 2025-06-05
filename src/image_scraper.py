@@ -7,7 +7,7 @@ import yaml
 import urllib.parse
 import logging
 import ssl
-from write_captions import create_caption_for_card
+from write_captions import save_metadata
 
 # Configure logging
 logging.basicConfig(
@@ -36,13 +36,25 @@ async def save_image(session: ClientSession, url: str, path: Path, multiverse_id
             async with session.get(url) as resp:
                 if resp.status == 200:
                     content = await resp.read()
-                    path.write_bytes(content)
+                    # path.write_bytes(content)
+                    # Create a BytesIO object to handle the image in memory
+                    from io import BytesIO
+                    image_data = BytesIO(content)
 
                     # Validate image
                     try:
-                        with Image.open(path) as img:
-                            img.verify()
-                    except UnidentifiedImageError as e:
+                        # with Image.open(path) as img:
+                        #     img.verify()
+
+                        # Open image from memory and convert to RGB to fix profile issues
+                        with Image.open(image_data) as img:
+                            # Convert to RGB (removes problematic color profiles)
+                            if img.mode != 'RGB':
+                                img = img.convert('RGB')
+                            # Save as JPG with good quality
+                            img.save(path, 'JPEG')
+
+                    except (UnidentifiedImageError, OSError) as e:
                         logging.warning(f"Corrupted image at {path.name}, removing.")
                         path.unlink()
                         if attempt < MAX_RETRIES - 1:
@@ -52,7 +64,8 @@ async def save_image(session: ClientSession, url: str, path: Path, multiverse_id
                             logging.error(f"Corrupted image after {MAX_RETRIES} attempts: {e}")
                             return False
 
-                    caption_created = create_caption_for_card(multiverse_id, str(path))
+                    caption_created = save_metadata(multiverse_id, str(path))
+                    
                     if not caption_created:
                         logging.error(f"Failed to create caption for {path.name}")
                         path.unlink()
